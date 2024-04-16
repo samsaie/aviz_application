@@ -1,10 +1,9 @@
-import 'package:aviz_application/Util/number_extension.dart';
-import 'package:aviz_application/features/promotion_detail/view/detail_screen2.dart';
-import 'package:aviz_application/features/home/data/model/promotion.dart';
-import 'package:aviz_application/widgets/cached_network_image.dart';
 import 'package:flutter/material.dart';
-
+import 'cached_network_image.dart';
+import '../Util/number_extension.dart';
 import '../Constants/color.dart';
+import '../features/home/data/model/promotion.dart';
+import '../features/promotion_detail/view/detail_screen2.dart';
 
 class HotPromotionCard extends StatelessWidget {
   final Promotion promotion;
@@ -46,6 +45,7 @@ class HotPromotionCard extends StatelessWidget {
           children: [
             Container(
               width: 192,
+              height: 110,
               decoration: ShapeDecoration(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
@@ -53,6 +53,7 @@ class HotPromotionCard extends StatelessWidget {
               ),
               child: CachedImage(
                 imageUrl: promotion.thumbnailUrl,
+                fit: BoxFit.fill,
               ),
             ),
             const SizedBox(height: 16),

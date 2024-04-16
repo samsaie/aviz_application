@@ -4,17 +4,12 @@ import 'color.dart';
 ThemeData appTheme() {
   return ThemeData(
     textTheme: const TextTheme(
-      titleLarge: TextStyle(
-        fontWeight: FontWeight.w700,
-        fontSize: 16,
-        fontFamily: 'sm',
-        color: AppColors.black,
-      ),
+      titleLarge:
+          TextStyle(fontFamily: 'sb', fontSize: 16, color: AppColors.black),
       titleMedium: TextStyle(
-        fontWeight: FontWeight.w500,
-        fontSize: 16,
         fontFamily: 'sm',
-        color: AppColors.borderGrey,
+        fontSize: 14,
+        color: AppColors.grey,
       ),
       titleSmall: TextStyle(
         fontWeight: FontWeight.w400,

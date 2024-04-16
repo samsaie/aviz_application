@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../Constants/color.dart';
 import 'confirm_login_screen.dart';
-import 'signin_screen.dart';
+import 'signIn_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
