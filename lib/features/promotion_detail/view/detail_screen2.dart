@@ -1,6 +1,7 @@
 import 'package:aviz_application/Util/number_extension.dart';
 import 'package:aviz_application/Constants/color.dart';
 import 'package:aviz_application/Constants/theme.dart';
+import 'package:aviz_application/widgets/alert_dialogs.dart';
 import 'package:aviz_application/widgets/call_buttons.dart';
 import 'package:aviz_application/widgets/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -58,7 +59,6 @@ class _DetailScreennState extends State<DetailScreenn> {
                   builder: (context) => AlertDialog(
                     title: const Text(
                       'Information',
-                      style: TextStyle(fontFamily: 'sb', fontSize: 16),
                     ),
                     content: const Text(
                       'Info of this Ad',
@@ -83,7 +83,6 @@ class _DetailScreennState extends State<DetailScreenn> {
                   builder: (context) => AlertDialog(
                     title: const Text(
                       'Share',
-                      style: TextStyle(fontFamily: 'sb', fontSize: 16),
                     ),
                     content: const Text(
                       'Share this Ad',
@@ -146,24 +145,20 @@ class _DetailScreennState extends State<DetailScreenn> {
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 8, vertical: 4),
                             decoration: BoxDecoration(
-                              color: AppColors.borderGrey,
+                              color: AppColors.lightGrey,
                               borderRadius: BorderRadius.circular(4),
                             ),
                             child: Text(
                               'آپارتمان',
-                              style: TextStyle(
-                                  fontFamily: appTheme()
-                                      .textTheme
-                                      .titleSmall!
-                                      .fontFamily,
-                                  fontSize:
-                                      appTheme().textTheme.titleSmall!.fontSize,
-                                  color: AppColors.red),
+                              style: appTheme()
+                                  .textTheme
+                                  .bodySmall!
+                                  .apply(color: AppColors.red),
                             ),
                           ),
                           Text(
                             '۱۶ دقیقه پیش در گرگان',
-                            style: appTheme().textTheme.titleSmall,
+                            style: appTheme().textTheme.bodySmall,
                           )
                         ],
                       ),
@@ -184,7 +179,7 @@ class _DetailScreennState extends State<DetailScreenn> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(6),
                           border:
-                              Border.all(width: 1, color: AppColors.borderGrey),
+                              Border.all(width: 1, color: AppColors.lightGrey),
                         ),
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -193,38 +188,16 @@ class _DetailScreennState extends State<DetailScreenn> {
                               showDialog(
                                 context: context,
                                 builder: (context) => Directionality(
-                                  textDirection: TextDirection.rtl,
-                                  child: AlertDialog(
-                                    title: const Text(
-                                      'روش‌های رایج کلاهبرداری در املاک:',
-                                      style: TextStyle(
-                                          fontFamily: 'sb', fontSize: 16),
-                                    ),
-                                    content: const Text(
-                                      '1- دریافت بیعانه 2- دریافت پول به بهانهٔ ارسال عکس و بازدید  3- اجاره یا فروش همزمان ملک به چند نفر  4- اجاره یا فروش ملک با سند یا شرایط مشکل‌دار  -  در این موارد به شدت احتیاط کنید:  آگهی‌گذار درخواست بیعانه دارد -  قیمت ملک پایین و وسوسه‌کننده‌ است - آگهی‌گذار به جای چت آویز مکالمه در خارج آویز را پیشنهاد می‌کند - وضعیت سند مشخص نیست',
-                                      textAlign: TextAlign.start,
-                                    ),
-                                    actions: [
-                                      Center(
-                                        child: TextButton(
-                                            onPressed: () =>
-                                                Navigator.pop(context),
-                                            child: const Text('Ok')),
-                                      )
-                                    ],
-                                  ),
-                                ),
+                                    textDirection: TextDirection.rtl,
+                                    child: alertDialog(context)),
                               );
                             },
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                const Text(
+                                Text(
                                   'هشدار های قبل از معامله!',
-                                  style: TextStyle(
-                                    fontFamily: 'sm',
-                                    fontSize: 16,
-                                  ),
+                                  style: appTheme().textTheme.titleLarge,
                                 ),
                                 Image.asset(
                                     'assets/images/grey_arrow_left_icon.png'),
@@ -358,7 +331,7 @@ class _DetailScreennState extends State<DetailScreenn> {
           width: double.infinity,
           height: 96,
           decoration: BoxDecoration(
-            border: Border.all(color: AppColors.borderGrey, width: 1),
+            border: Border.all(color: AppColors.lightGrey, width: 1),
             borderRadius: BorderRadius.circular(4),
           ),
           child: Column(
@@ -451,7 +424,7 @@ class _DetailScreennState extends State<DetailScreenn> {
           width: double.infinity,
           height: 56 * facilities.length.toDouble(),
           decoration: BoxDecoration(
-            border: Border.all(color: AppColors.borderGrey, width: 1),
+            border: Border.all(color: AppColors.lightGrey, width: 1),
             borderRadius: BorderRadius.circular(4),
           ),
           child: ListView.builder(
@@ -500,7 +473,7 @@ class _DetailScreennState extends State<DetailScreenn> {
           width: double.infinity,
           height: 96,
           decoration: BoxDecoration(
-            border: Border.all(color: AppColors.borderGrey, width: 1),
+            border: Border.all(color: AppColors.lightGrey, width: 1),
             borderRadius: BorderRadius.circular(4),
           ),
           child: Column(
@@ -582,7 +555,7 @@ class _DetailScreennState extends State<DetailScreenn> {
         Container(
           height: 98,
           decoration: BoxDecoration(
-            border: Border.all(color: AppColors.borderGrey, width: 1),
+            border: Border.all(color: AppColors.lightGrey, width: 1),
             borderRadius: BorderRadius.circular(4),
           ),
           child: Row(

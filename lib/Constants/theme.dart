@@ -6,16 +6,16 @@ ThemeData appTheme() {
     textTheme: const TextTheme(
       titleLarge:
           TextStyle(fontFamily: 'sb', fontSize: 16, color: AppColors.black),
-      titleMedium: TextStyle(
+      bodyMedium: TextStyle(
         fontFamily: 'sm',
         fontSize: 14,
         color: AppColors.grey,
       ),
-      titleSmall: TextStyle(
-        fontWeight: FontWeight.w400,
-        fontSize: 14,
-        fontFamily: 'sm',
+      bodySmall: TextStyle(
         color: AppColors.grey,
+        fontSize: 12,
+        fontFamily: 'sm',
+        fontWeight: FontWeight.w400,
       ),
     ),
   );

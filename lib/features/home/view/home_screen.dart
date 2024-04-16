@@ -1,8 +1,9 @@
+import '../../../Constants/theme.dart';
 import '../../../DI/di.dart';
 import '../../../Constants/color.dart';
 import '../bloc/home_bloc.dart';
 import '../../../widgets/hot_promotion_card.dart';
-import '../../../widgets/normal_promotion_card.dart';
+import '../../../widgets/recent_promotion_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -56,14 +57,8 @@ class ViewContainer extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text(
-                          'آویز های داغ',
-                          style: TextStyle(
-                            fontFamily: 'sb',
-                            fontSize: 16,
-                            color: AppColors.black,
-                          ),
-                        ),
+                        Text('آویز های داغ',
+                            style: appTheme().textTheme.titleLarge!),
                         GestureDetector(
                           onTap: () {
                             // Navigator.of(context).push(
@@ -73,12 +68,12 @@ class ViewContainer extends StatelessWidget {
                             //   ),
                             // );
                           },
-                          child: const Text(
+                          child: Text(
                             'مشاهده همه',
-                            style: TextStyle(
-                                fontFamily: 'sm',
-                                fontSize: 14,
-                                color: AppColors.borderGrey),
+                            style: appTheme()
+                                .textTheme
+                                .bodyMedium!
+                                .apply(color: AppColors.lightGrey),
                           ),
                         ),
                       ],
@@ -126,22 +121,16 @@ class ViewContainer extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text(
-                          'آویز های اخیر',
-                          style: TextStyle(
-                            fontFamily: 'sb',
-                            fontSize: 16,
-                            color: AppColors.black,
-                          ),
-                        ),
+                        Text('آویز های اخیر',
+                            style: appTheme().textTheme.titleLarge!),
                         GestureDetector(
                           onTap: () {},
-                          child: const Text(
+                          child: Text(
                             'مشاهده همه',
-                            style: TextStyle(
-                                fontFamily: 'sm',
-                                fontSize: 14,
-                                color: AppColors.borderGrey),
+                            style: appTheme()
+                                .textTheme
+                                .bodyMedium!
+                                .apply(color: AppColors.lightGrey),
                           ),
                         ),
                       ],
@@ -170,7 +159,7 @@ class ViewContainer extends StatelessWidget {
                         (context, index) => Padding(
                           padding: const EdgeInsets.all(10),
                           child:
-                              NormalPromotionCard(latestPromotionList[index]),
+                              RecentPromotionCard(latestPromotionList[index]),
                         ),
                         childCount: latestPromotionList.length,
                       ),

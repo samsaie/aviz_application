@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../Constants/theme.dart';
 import 'cached_network_image.dart';
 import '../Util/number_extension.dart';
 import '../Constants/color.dart';
@@ -58,52 +59,34 @@ class HotPromotionCard extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             SizedBox(
-              child: Text(
-                promotion.title,
-                textAlign: TextAlign.right,
-                style: const TextStyle(
-                  color: AppColors.black,
-                  fontSize: 14,
-                  fontFamily: 'sm',
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
+              child: Text(promotion.title,
+                  textAlign: TextAlign.right,
+                  style: appTheme().textTheme.titleLarge),
             ),
             const SizedBox(height: 8),
             SizedBox(
-              child: Text(
-                promotion.description,
-                textAlign: TextAlign.right,
-                style: const TextStyle(
-                  color: AppColors.grey,
-                  fontSize: 12,
-                  fontFamily: 'sm',
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
+              child: Text(promotion.description,
+                  textAlign: TextAlign.right,
+                  style: appTheme().textTheme.bodySmall),
             ),
             const Spacer(),
             Row(
               children: [
-                const Text(
+                Text(
                   'قیمت:',
                   textAlign: TextAlign.right,
-                  style: TextStyle(
-                    color: AppColors.black,
-                    fontSize: 12,
-                    fontFamily: 'sm',
-                    fontWeight: FontWeight.w500,
-                  ),
+                  style: appTheme()
+                      .textTheme
+                      .bodySmall!
+                      .apply(color: AppColors.black),
                 ),
                 const Spacer(),
                 Text(
                   promotion.price.convertToPrice(),
-                  style: const TextStyle(
-                    color: AppColors.red,
-                    fontSize: 12,
-                    fontFamily: 'sm',
-                    fontWeight: FontWeight.w500,
-                  ),
+                  style: appTheme()
+                      .textTheme
+                      .bodySmall!
+                      .apply(color: AppColors.red),
                 ),
               ],
             ),

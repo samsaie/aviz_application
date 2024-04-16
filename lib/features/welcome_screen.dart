@@ -3,6 +3,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../Constants/color.dart';
 import '../widgets/bottoms.dart';
+import '../Constants/theme.dart';
 
 class WelcomeScreen extends StatefulWidget {
   WelcomeScreen({super.key});
@@ -48,7 +49,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 effect: const ExpandingDotsEffect(
                   dotHeight: 8,
                   dotWidth: 8,
-                  dotColor: AppColors.grey,
+                  dotColor: AppColors.backgroundGrey,
                   activeDotColor: AppColors.red,
                 ),
               ),
@@ -94,10 +95,9 @@ Widget _getContainerBox() {
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Text(
+          Text(
             'اینجا محل',
-            style: TextStyle(
-                fontFamily: 'sb', fontSize: 16, color: AppColors.black),
+            style: appTheme().textTheme.titleLarge,
           ),
           const SizedBox(
             width: 10,
@@ -106,25 +106,20 @@ Widget _getContainerBox() {
           const SizedBox(
             width: 10,
           ),
-          const Text(
+          Text(
             'آگهی شماست',
-            style: TextStyle(
-                fontFamily: 'sb', fontSize: 16, color: AppColors.black),
+            style: appTheme().textTheme.titleLarge,
           ),
         ],
       ),
       const SizedBox(
         height: 16,
       ),
-      const Padding(
+      Padding(
         padding: EdgeInsets.symmetric(horizontal: 20),
         child: Text(
           'در آویز ملک خود را برای فروش،اجاره و رهن آگهی کنید و یا اگر دنبال ملک با مشخصات دلخواه خود هستید آویز ها را ببینید',
-          style: TextStyle(
-            fontFamily: 'sm',
-            fontSize: 14,
-            color: AppColors.grey,
-          ),
+          style: appTheme().textTheme.bodyMedium,
           textAlign: TextAlign.center,
         ),
       )

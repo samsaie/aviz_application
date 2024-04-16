@@ -15,7 +15,7 @@ class SearchBox extends StatelessWidget {
           onChanged: (value) {},
           textDirection: TextDirection.rtl,
           textAlign: TextAlign.start,
-          cursorColor: AppColors.borderGrey,
+          cursorColor: AppColors.lightGrey,
           decoration: InputDecoration(
             contentPadding:
                 const EdgeInsets.symmetric(horizontal: 16, vertical: 8),

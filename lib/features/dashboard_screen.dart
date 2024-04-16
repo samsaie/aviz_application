@@ -39,7 +39,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               backgroundColor: const Color(0xffF9FAFB),
               elevation: 0,
               selectedItemColor: AppColors.red,
-              unselectedItemColor: AppColors.borderGrey,
+              unselectedItemColor: AppColors.lightGrey,
               selectedFontSize: 14,
               unselectedFontSize: 14,
               selectedLabelStyle: const TextStyle(

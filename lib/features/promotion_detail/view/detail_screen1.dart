@@ -1,6 +1,8 @@
+import 'package:aviz_application/widgets/alert_dialogs.dart';
 import 'package:flutter/material.dart';
 
 import '../../../Constants/color.dart';
+import '../../../Constants/theme.dart';
 import '../../../widgets/cached_network_image.dart';
 import '../../../widgets/call_buttons.dart';
 import '../../home/data/model/promotion.dart';
@@ -37,7 +39,6 @@ class _DetailScreenState extends State<DetailScreen> {
                   builder: (context) => AlertDialog(
                     title: const Text(
                       'Information',
-                      style: TextStyle(fontFamily: 'sb', fontSize: 16),
                     ),
                     content: const Text(
                       'Info of this Ad',
@@ -62,7 +63,6 @@ class _DetailScreenState extends State<DetailScreen> {
                   builder: (context) => AlertDialog(
                     title: const Text(
                       'Share',
-                      style: TextStyle(fontFamily: 'sb', fontSize: 16),
                     ),
                     content: const Text(
                       'Share this Ad',
@@ -113,7 +113,7 @@ class _DetailScreenState extends State<DetailScreen> {
                 ),
               ];
             },
-            body: TabBarView(
+            body: const TabBarView(
               children: [InfoTab(), PriceTab(), FacilityTab(), ExplainTab()],
             ),
           ),
@@ -157,28 +157,28 @@ class HeaderContent extends StatelessWidget {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(6),
                       color: const Color.fromARGB(255, 233, 236, 243)),
-                  child: const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                     child: Text(
                       'آپارتمان',
-                      style: TextStyle(fontFamily: 'sm', color: AppColors.red),
+                      style: appTheme()
+                          .textTheme
+                          .bodySmall!
+                          .apply(color: AppColors.red),
                     ),
                   ),
                 ),
               ),
-              const Text(
+              Text(
                 '۱۶ دقیقه پیش در گرگان',
-                style: TextStyle(fontFamily: 'sm', color: AppColors.grey),
+                style: appTheme().textTheme.bodySmall,
               ),
             ],
           ),
           Text(
             parentWidget.promotion.title,
-            style: const TextStyle(
-                fontFamily: 'sb',
-                color: AppColors.black,
-                fontSize: 16,
-                fontWeight: FontWeight.w700),
+            style: appTheme().textTheme.titleLarge,
           ),
           const SizedBox(
             height: 50,
@@ -187,7 +187,7 @@ class HeaderContent extends StatelessWidget {
             height: 50,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(6),
-              border: Border.all(width: 1, color: AppColors.borderGrey),
+              border: Border.all(width: 1, color: AppColors.lightGrey),
             ),
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -196,36 +196,16 @@ class HeaderContent extends StatelessWidget {
                   showDialog(
                     context: context,
                     builder: (context) => Directionality(
-                      textDirection: TextDirection.rtl,
-                      child: AlertDialog(
-                        title: const Text(
-                          'روش‌های رایج کلاهبرداری در املاک:',
-                          style: TextStyle(fontFamily: 'sb', fontSize: 16),
-                        ),
-                        content: const Text(
-                          '1- دریافت بیعانه 2- دریافت پول به بهانهٔ ارسال عکس و بازدید  3- اجاره یا فروش همزمان ملک به چند نفر  4- اجاره یا فروش ملک با سند یا شرایط مشکل‌دار  -  در این موارد به شدت احتیاط کنید:  آگهی‌گذار درخواست بیعانه دارد -  قیمت ملک پایین و وسوسه‌کننده‌ است - آگهی‌گذار به جای چت آویز مکالمه در خارج آویز را پیشنهاد می‌کند - وضعیت سند مشخص نیست',
-                          textAlign: TextAlign.start,
-                        ),
-                        actions: [
-                          Center(
-                            child: TextButton(
-                                onPressed: () => Navigator.pop(context),
-                                child: const Text('Ok')),
-                          )
-                        ],
-                      ),
-                    ),
+                        textDirection: TextDirection.rtl,
+                        child: alertDialog(context)),
                   );
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text(
+                    Text(
                       'هشدار های قبل از معامله!',
-                      style: TextStyle(
-                        fontFamily: 'sm',
-                        fontSize: 16,
-                      ),
+                      style: appTheme().textTheme.titleLarge,
                     ),
                     Image.asset('assets/images/grey_arrow_left_icon.png'),
                   ],
@@ -293,7 +273,7 @@ class InfoTab extends StatelessWidget {
                 height: 110,
                 decoration: BoxDecoration(
                   border: Border.all(
-                    color: AppColors.borderGrey,
+                    color: AppColors.lightGrey,
                   ),
                   borderRadius: BorderRadius.circular(6),
                 ),
@@ -540,7 +520,7 @@ class PriceTab extends StatelessWidget {
                 height: 125,
                 decoration: BoxDecoration(
                   border: Border.all(
-                    color: AppColors.borderGrey,
+                    color: AppColors.lightGrey,
                   ),
                   borderRadius: BorderRadius.circular(6),
                 ),
@@ -653,7 +633,7 @@ class FacilityTab extends StatelessWidget {
                 height: 125,
                 decoration: BoxDecoration(
                   border: Border.all(
-                    color: AppColors.borderGrey,
+                    color: AppColors.lightGrey,
                   ),
                   borderRadius: BorderRadius.circular(6),
                 ),
@@ -746,7 +726,7 @@ class FacilityTab extends StatelessWidget {
                 // height: 360,
                 decoration: BoxDecoration(
                   border: Border.all(
-                    color: AppColors.borderGrey,
+                    color: AppColors.lightGrey,
                   ),
                   borderRadius: BorderRadius.circular(6),
                 ),

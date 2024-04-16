@@ -96,7 +96,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                     const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 decoration: BoxDecoration(
                     border: Border.all(
-                      color: AppColors.borderGrey,
+                      color: AppColors.lightGrey,
                     ),
                     borderRadius: BorderRadius.circular(6)),
                 child: Row(

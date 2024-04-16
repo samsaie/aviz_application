@@ -1,8 +1,10 @@
+import 'package:aviz_application/widgets/bottoms.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import '../../../Constants/color.dart';
-import 'confirm_login_screen.dart';
+import '../../../Constants/theme.dart';
+import 'confirm_screen.dart';
 import 'signIn_screen.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -21,12 +23,9 @@ class LoginScreen extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    const Text(
+                    Text(
                       'ورود به',
-                      style: TextStyle(
-                          fontFamily: 'sb',
-                          fontSize: 16,
-                          color: AppColors.black),
+                      style: appTheme().textTheme.titleLarge,
                     ),
                     const SizedBox(
                       width: 10,
@@ -37,68 +36,31 @@ class LoginScreen extends StatelessWidget {
                 const SizedBox(
                   height: 16,
                 ),
-                const Text(
+                Text(
                   'خوشحالیم که مجددا آویز رو برای آگهی انتخاب کردی!',
-                  style: TextStyle(
-                    fontFamily: 'sm',
-                    fontSize: 14,
-                    color: AppColors.grey,
-                  ),
+                  style: appTheme().textTheme.bodyMedium,
                 ),
                 const SizedBox(
                   height: 32,
                 ),
                 TextFormField(
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     border: InputBorder.none,
                     fillColor: AppColors.backgroundGrey,
                     filled: true,
                     labelText: 'شماره موبایل',
-                    labelStyle: TextStyle(
-                      fontFamily: 'sm',
-                      fontSize: 16,
-                      color: AppColors.grey,
-                    ),
-                    floatingLabelStyle: TextStyle(
-                      fontFamily: 'sm',
-                      color: AppColors.grey,
-                    ),
+                    labelStyle: appTheme()
+                        .textTheme
+                        .titleLarge!
+                        .apply(color: AppColors.lightGrey),
+                    floatingLabelStyle: appTheme()
+                        .textTheme
+                        .titleLarge!
+                        .apply(color: AppColors.lightGrey),
                   ),
                 ),
                 const Spacer(),
-                SizedBox(
-                  height: 50,
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(4),
-                      ),
-                      backgroundColor: AppColors.red,
-                      foregroundColor: Colors.white,
-                    ),
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const ConfirmLoginScreen(),
-                        ),
-                      );
-                    },
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text(
-                          'مرحله بعد',
-                          style: TextStyle(fontFamily: 'sm', fontSize: 16),
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        Image.asset('assets/images/arrow-left.png')
-                      ],
-                    ),
-                  ),
-                ),
+                nextBottom(context),
                 const SizedBox(
                   height: 24,
                 ),
@@ -106,17 +68,14 @@ class LoginScreen extends StatelessWidget {
                   child: Text.rich(
                     TextSpan(
                       text: 'تاحالا ثبت نام نکردی؟',
-                      style: const TextStyle(
-                          color: AppColors.grey,
-                          fontFamily: 'sm',
-                          fontSize: 14),
+                      style: appTheme().textTheme.bodyMedium,
                       children: [
                         TextSpan(
                           text: ' ثبت نام',
-                          style: const TextStyle(
-                              color: AppColors.red,
-                              fontFamily: 'sm',
-                              fontSize: 14),
+                          style: appTheme()
+                              .textTheme
+                              .bodyMedium!
+                              .apply(color: AppColors.red),
                           recognizer: TapGestureRecognizer()
                             ..onTap = () {
                               Navigator.of(context).push(
