@@ -1,11 +1,9 @@
-import 'package:aviz_application/widgets/buttons.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
+import '../../../widgets/buttons.dart';
 import '../../../Constants/color.dart';
 import '../../../Constants/theme.dart';
-import 'confirm_screen.dart';
-import 'signIn_screen.dart';
+import '../../../features/auth/view/signIn_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});

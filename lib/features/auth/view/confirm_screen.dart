@@ -1,12 +1,8 @@
 import 'dart:async';
-
-import 'package:aviz_application/Constants/theme.dart';
-import 'package:aviz_application/widgets/buttons.dart';
-import 'package:aviz_application/widgets/pin_code.dart';
 import 'package:flutter/material.dart';
-
-import '../../../Constants/color.dart';
-import '../../dashboard_screen.dart';
+import '../../../Constants/theme.dart';
+import '../../../widgets/buttons.dart';
+import '../../../widgets/pin_code.dart';
 
 class ConfirmScreen extends StatefulWidget {
   const ConfirmScreen({super.key});
