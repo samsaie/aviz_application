@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../Constants/color.dart';
-import '../widgets/bottoms.dart';
+import '../widgets/buttons.dart';
 import '../Constants/theme.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -56,7 +56,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               const SizedBox(
                 height: 32,
               ),
-              getBottoms(context)
+              getButtons(context)
             ],
           ),
         ),

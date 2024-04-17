@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:aviz_application/Constants/theme.dart';
-import 'package:aviz_application/widgets/bottoms.dart';
+import 'package:aviz_application/widgets/buttons.dart';
 import 'package:aviz_application/widgets/pin_code.dart';
 import 'package:flutter/material.dart';
 
@@ -94,7 +94,7 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
                 ],
               ),
               const Spacer(),
-              confirmBottom(context),
+              confirmButton(context),
             ],
           ),
         ),

@@ -1,12 +1,10 @@
-import 'package:aviz_application/Util/number_extension.dart';
-import 'package:aviz_application/Constants/color.dart';
-import 'package:aviz_application/Constants/theme.dart';
-import 'package:aviz_application/widgets/alert_dialogs.dart';
-import 'package:aviz_application/widgets/call_buttons.dart';
-import 'package:aviz_application/widgets/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-
+import '../../../Util/number_extension.dart';
+import '../../../widgets/buttons.dart';
+import '../../../Constants/color.dart';
+import '../../../Constants/theme.dart';
+import '../../../widgets/alert_dialogs.dart';
+import '../../../widgets/cached_network_image.dart';
 import '../../home/data/model/promotion.dart';
 
 class DetailScreenn extends StatefulWidget {
@@ -230,17 +228,17 @@ class _DetailScreennState extends State<DetailScreenn> {
                                       borderRadius: BorderRadius.circular(4),
                                     ),
                                     padding: const EdgeInsets.symmetric(
-                                        horizontal: 8, vertical: 4),
+                                        horizontal: 4, vertical: 4),
                                     child: Text(
                                       sectionsList[index],
                                       style: TextStyle(
                                         fontFamily: appTheme()
                                             .textTheme
-                                            .titleSmall!
+                                            .titleLarge!
                                             .fontFamily,
                                         fontSize: appTheme()
                                             .textTheme
-                                            .titleSmall!
+                                            .titleLarge!
                                             .fontSize,
                                         color: selectedSection == index
                                             ? Colors.white
@@ -289,12 +287,12 @@ class _DetailScreennState extends State<DetailScreenn> {
       children: [
         Text(
           promotion.moreInfo,
-          style: appTheme().textTheme.titleSmall,
+          style: appTheme().textTheme.bodyMedium,
         ),
         const SizedBox(
           height: 32,
         ),
-        const CallButtons()
+        callButtons()
       ],
     );
   }
@@ -343,24 +341,9 @@ class _DetailScreennState extends State<DetailScreenn> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        'سند',
-                        style: TextStyle(
-                          fontFamily:
-                              appTheme().textTheme.titleSmall!.fontFamily,
-                          fontSize: 16,
-                          color: appTheme().textTheme.titleSmall!.color,
-                        ),
-                      ),
-                      Text(
-                        promotion.sanad,
-                        style: TextStyle(
-                          fontFamily:
-                              appTheme().textTheme.titleSmall!.fontFamily,
-                          fontSize: 16,
-                          color: appTheme().textTheme.titleSmall!.color,
-                        ),
-                      ),
+                      Text('سند', style: appTheme().textTheme.bodyMedium),
+                      Text(promotion.sanad,
+                          style: appTheme().textTheme.bodyMedium),
                     ],
                   ),
                 ),
@@ -378,24 +361,10 @@ class _DetailScreennState extends State<DetailScreenn> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        'جهت ساختمان',
-                        style: TextStyle(
-                          fontFamily:
-                              appTheme().textTheme.titleSmall!.fontFamily,
-                          fontSize: 16,
-                          color: appTheme().textTheme.titleSmall!.color,
-                        ),
-                      ),
-                      Text(
-                        promotion.direction,
-                        style: TextStyle(
-                          fontFamily:
-                              appTheme().textTheme.titleSmall!.fontFamily,
-                          fontSize: 16,
-                          color: appTheme().textTheme.titleSmall!.color,
-                        ),
-                      ),
+                      Text('جهت ساختمان',
+                          style: appTheme().textTheme.bodyMedium),
+                      Text(promotion.direction,
+                          style: appTheme().textTheme.bodyMedium),
                     ],
                   ),
                 ),
@@ -436,14 +405,8 @@ class _DetailScreennState extends State<DetailScreenn> {
                   Padding(
                     padding:
                         const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                    child: Text(
-                      facilities[index],
-                      style: TextStyle(
-                        fontFamily: appTheme().textTheme.titleSmall!.fontFamily,
-                        fontSize: 16,
-                        color: appTheme().textTheme.titleSmall!.color,
-                      ),
-                    ),
+                    child: Text(facilities[index],
+                        style: appTheme().textTheme.bodyMedium),
                   ),
                   index != (facilities.length - 1)
                       ? const Divider(
@@ -461,7 +424,7 @@ class _DetailScreennState extends State<DetailScreenn> {
         const SizedBox(
           height: 32,
         ),
-        const CallButtons()
+        callButtons()
       ],
     );
   }
@@ -471,7 +434,7 @@ class _DetailScreennState extends State<DetailScreenn> {
       children: [
         Container(
           width: double.infinity,
-          height: 96,
+          height: 100,
           decoration: BoxDecoration(
             border: Border.all(color: AppColors.lightGrey, width: 1),
             borderRadius: BorderRadius.circular(4),
@@ -487,21 +450,17 @@ class _DetailScreennState extends State<DetailScreenn> {
                     children: [
                       Text(
                         'قیمت هر متر:',
-                        style: TextStyle(
-                          fontFamily:
-                              appTheme().textTheme.titleSmall!.fontFamily,
-                          fontSize: 16,
-                          color: AppColors.black,
-                        ),
+                        style: appTheme()
+                            .textTheme
+                            .bodyMedium!
+                            .apply(color: AppColors.black),
                       ),
                       Text(
                         promotion.pricePerMeter.convertToPrice(),
-                        style: TextStyle(
-                          fontFamily:
-                              appTheme().textTheme.titleSmall!.fontFamily,
-                          fontSize: 16,
-                          color: AppColors.black,
-                        ),
+                        style: appTheme()
+                            .textTheme
+                            .bodyMedium!
+                            .apply(color: AppColors.black),
                       ),
                     ],
                   ),
@@ -521,19 +480,17 @@ class _DetailScreennState extends State<DetailScreenn> {
                   children: [
                     Text(
                       'قیمت کل:',
-                      style: TextStyle(
-                        fontFamily: appTheme().textTheme.titleSmall!.fontFamily,
-                        fontSize: 16,
-                        color: AppColors.black,
-                      ),
+                      style: appTheme()
+                          .textTheme
+                          .bodyMedium!
+                          .apply(color: AppColors.black),
                     ),
                     Text(
                       promotion.price.convertToPrice(),
-                      style: TextStyle(
-                        fontFamily: appTheme().textTheme.titleSmall!.fontFamily,
-                        fontSize: 16,
-                        color: AppColors.black,
-                      ),
+                      style: appTheme()
+                          .textTheme
+                          .bodyMedium!
+                          .apply(color: AppColors.black),
                     ),
                   ],
                 ),
@@ -544,7 +501,7 @@ class _DetailScreennState extends State<DetailScreenn> {
         const SizedBox(
           height: 32,
         ),
-        const CallButtons()
+        callButtons()
       ],
     );
   }
@@ -568,15 +525,17 @@ class _DetailScreennState extends State<DetailScreenn> {
                   children: [
                     Text(
                       'متراژ',
-                      style: appTheme().textTheme.titleSmall,
+                      style: appTheme()
+                          .textTheme
+                          .bodyMedium!
+                          .apply(color: AppColors.grey),
                     ),
                     Text(
                       promotion.meterage.toString(),
-                      style: TextStyle(
-                        fontFamily: appTheme().textTheme.titleSmall!.fontFamily,
-                        fontSize: appTheme().textTheme.titleSmall!.fontSize,
-                        color: AppColors.black,
-                      ),
+                      style: appTheme()
+                          .textTheme
+                          .bodyMedium!
+                          .apply(color: AppColors.black),
                     ),
                   ],
                 ),
@@ -595,15 +554,17 @@ class _DetailScreennState extends State<DetailScreenn> {
                   children: [
                     Text(
                       'اتاق',
-                      style: appTheme().textTheme.titleSmall,
+                      style: appTheme()
+                          .textTheme
+                          .bodyMedium!
+                          .apply(color: AppColors.grey),
                     ),
                     Text(
                       promotion.rooms.toString(),
-                      style: TextStyle(
-                        fontFamily: appTheme().textTheme.titleSmall!.fontFamily,
-                        fontSize: appTheme().textTheme.titleSmall!.fontSize,
-                        color: AppColors.black,
-                      ),
+                      style: appTheme()
+                          .textTheme
+                          .bodyMedium!
+                          .apply(color: AppColors.black),
                     ),
                   ],
                 ),
@@ -622,15 +583,17 @@ class _DetailScreennState extends State<DetailScreenn> {
                   children: [
                     Text(
                       'طبقه',
-                      style: appTheme().textTheme.titleSmall,
+                      style: appTheme()
+                          .textTheme
+                          .bodyMedium!
+                          .apply(color: AppColors.grey),
                     ),
                     Text(
                       promotion.floors.toString(),
-                      style: TextStyle(
-                        fontFamily: appTheme().textTheme.titleSmall!.fontFamily,
-                        fontSize: appTheme().textTheme.titleSmall!.fontSize,
-                        color: AppColors.black,
-                      ),
+                      style: appTheme()
+                          .textTheme
+                          .bodyMedium!
+                          .apply(color: AppColors.black),
                     ),
                   ],
                 ),
@@ -649,16 +612,17 @@ class _DetailScreennState extends State<DetailScreenn> {
                   children: [
                     Text(
                       'ساخت',
-                      style: appTheme().textTheme.titleSmall,
+                      style: appTheme()
+                          .textTheme
+                          .bodyMedium!
+                          .apply(color: AppColors.grey),
                     ),
                     Text(
                       promotion.buildYear.toString(),
-                      style: TextStyle(
-                        fontFamily:
-                            appTheme().textTheme.titleMedium!.fontFamily,
-                        fontSize: appTheme().textTheme.titleMedium!.fontSize,
-                        color: AppColors.black,
-                      ),
+                      style: appTheme()
+                          .textTheme
+                          .bodyMedium!
+                          .apply(color: AppColors.black),
                     ),
                   ],
                 ),
@@ -716,12 +680,12 @@ class _DetailScreennState extends State<DetailScreenn> {
                       right: 15,
                       child: Row(
                         children: [
-                          const Text(
+                          Text(
                             'گرگان، صیاد شیرا...',
-                            style: TextStyle(
-                                fontFamily: 'sm',
-                                color: Colors.white,
-                                fontSize: 16),
+                            style: appTheme()
+                                .textTheme
+                                .titleLarge!
+                                .apply(color: Colors.white),
                           ),
                           const SizedBox(
                             width: 10,
@@ -739,7 +703,7 @@ class _DetailScreennState extends State<DetailScreenn> {
         const SizedBox(
           height: 32,
         ),
-        const CallButtons()
+        callButtons()
       ],
     );
   }

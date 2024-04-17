@@ -1,3 +1,5 @@
+import 'package:aviz_application/Constants/theme.dart';
+
 import '../features/dashboard_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -6,7 +8,7 @@ import '../features/auth/view/confirm_screen.dart';
 import '../features/auth/view/login_screen.dart';
 import '../features/auth/view/signIn_screen.dart';
 
-Widget getBottoms(BuildContext context) {
+Widget getButtons(BuildContext context) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
@@ -27,9 +29,9 @@ Widget getBottoms(BuildContext context) {
               ),
             );
           },
-          child: const Text(
+          child: Text(
             'ثبت نام',
-            style: TextStyle(fontFamily: 'sm', fontSize: 16),
+            style: appTheme().textTheme.titleLarge!.apply(color: Colors.white),
           ),
         ),
       ),
@@ -54,9 +56,9 @@ Widget getBottoms(BuildContext context) {
               ),
             );
           },
-          child: const Text(
+          child: Text(
             'ورود',
-            style: TextStyle(fontFamily: 'sm', fontSize: 16),
+            style: appTheme().textTheme.titleLarge!.apply(color: Colors.red),
           ),
         ),
       ),
@@ -64,7 +66,7 @@ Widget getBottoms(BuildContext context) {
   );
 }
 
-Widget nextBottom(BuildContext context) {
+Widget nextButton(BuildContext context) {
   return SizedBox(
     height: 50,
     width: double.infinity,
@@ -86,9 +88,9 @@ Widget nextBottom(BuildContext context) {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Text(
+          Text(
             'مرحله بعد',
-            style: TextStyle(fontFamily: 'sm', fontSize: 16),
+            style: appTheme().textTheme.titleLarge!.apply(color: Colors.white),
           ),
           const SizedBox(
             width: 10,
@@ -100,7 +102,7 @@ Widget nextBottom(BuildContext context) {
   );
 }
 
-Widget confirmBottom(BuildContext context) {
+Widget confirmButton(BuildContext context) {
   return SizedBox(
     height: 50,
     width: double.infinity,
@@ -119,10 +121,70 @@ Widget confirmBottom(BuildContext context) {
           ),
         );
       },
-      child: const Text(
+      child: Text(
         'تایید',
-        style: TextStyle(fontFamily: 'sm', fontSize: 16),
+        style: appTheme().textTheme.titleLarge!.apply(color: Colors.white),
       ),
     ),
+  );
+}
+
+Widget callButtons() {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      SizedBox(
+        height: 50,
+        width: 180,
+        child: TextButton(
+          style: TextButton.styleFrom(
+              backgroundColor: AppColors.red,
+              foregroundColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(6))),
+          onPressed: () {},
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset('assets/images/message_icon.png'),
+              const SizedBox(
+                width: 10,
+              ),
+              Text(
+                'گفتگو',
+                style:
+                    appTheme().textTheme.titleLarge!.apply(color: Colors.white),
+              )
+            ],
+          ),
+        ),
+      ),
+      SizedBox(
+        height: 50,
+        width: 180,
+        child: TextButton(
+          style: TextButton.styleFrom(
+              backgroundColor: AppColors.red,
+              foregroundColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(6))),
+          onPressed: () {},
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset('assets/images/call_icon.png'),
+              const SizedBox(
+                width: 10,
+              ),
+              Text(
+                'اطلاعات تماس',
+                style:
+                    appTheme().textTheme.titleLarge!.apply(color: Colors.white),
+              )
+            ],
+          ),
+        ),
+      )
+    ],
   );
 }

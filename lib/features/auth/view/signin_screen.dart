@@ -1,4 +1,4 @@
-import 'package:aviz_application/widgets/bottoms.dart';
+import 'package:aviz_application/widgets/buttons.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -79,7 +79,7 @@ class SignScreen extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
-                nextBottom(context),
+                nextButton(context),
                 const SizedBox(
                   height: 24,
                 ),

@@ -1,10 +1,9 @@
-import 'package:aviz_application/widgets/alert_dialogs.dart';
 import 'package:flutter/material.dart';
-
+import '../../../widgets/alert_dialogs.dart';
+import '../../../widgets/buttons.dart';
 import '../../../Constants/color.dart';
 import '../../../Constants/theme.dart';
 import '../../../widgets/cached_network_image.dart';
-import '../../../widgets/call_buttons.dart';
 import '../../home/data/model/promotion.dart';
 
 class DetailScreen extends StatefulWidget {
@@ -238,11 +237,8 @@ class AvizTabBar extends StatelessWidget {
               ),
               color: AppColors.red,
             ),
-            labelStyle: const TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-                fontFamily: 'sm',
-                fontWeight: FontWeight.w600),
+            labelStyle:
+                appTheme().textTheme.titleLarge!.apply(color: Colors.white),
             unselectedLabelColor: AppColors.red,
             tabs: const [
               Tab(text: 'مشخصات'),
@@ -277,10 +273,10 @@ class InfoTab extends StatelessWidget {
                   ),
                   borderRadius: BorderRadius.circular(6),
                 ),
-                child: const Row(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                     Column(
@@ -288,34 +284,34 @@ class InfoTab extends StatelessWidget {
                       children: [
                         Text(
                           'متراژ',
-                          style: TextStyle(
-                              fontFamily: 'sm',
-                              color: AppColors.grey,
-                              fontSize: 16),
+                          style: appTheme()
+                              .textTheme
+                              .bodyMedium!
+                              .apply(color: AppColors.grey),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
                         Text(
                           '۵۰۰',
-                          style: TextStyle(
-                              fontFamily: 'sm',
-                              color: AppColors.black,
-                              fontSize: 16),
+                          style: appTheme()
+                              .textTheme
+                              .bodyMedium!
+                              .apply(color: AppColors.black),
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
-                    VerticalDivider(
+                    const VerticalDivider(
                       width: 20,
                       thickness: 1,
                       indent: 20,
                       endIndent: 20,
                       color: Color.fromARGB(255, 235, 239, 244),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     Column(
@@ -323,34 +319,34 @@ class InfoTab extends StatelessWidget {
                       children: [
                         Text(
                           'اتاق',
-                          style: TextStyle(
-                              fontFamily: 'sm',
-                              color: AppColors.grey,
-                              fontSize: 16),
+                          style: appTheme()
+                              .textTheme
+                              .bodyMedium!
+                              .apply(color: AppColors.grey),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
                         Text(
                           '۶',
-                          style: TextStyle(
-                              fontFamily: 'sm',
-                              color: AppColors.black,
-                              fontSize: 16),
+                          style: appTheme()
+                              .textTheme
+                              .bodyMedium!
+                              .apply(color: AppColors.black),
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
-                    VerticalDivider(
+                    const VerticalDivider(
                       width: 20,
                       thickness: 1,
                       indent: 20,
                       endIndent: 20,
                       color: Color.fromARGB(255, 235, 239, 244),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     Column(
@@ -358,34 +354,34 @@ class InfoTab extends StatelessWidget {
                       children: [
                         Text(
                           'طبقه',
-                          style: TextStyle(
-                              fontFamily: 'sm',
-                              color: AppColors.grey,
-                              fontSize: 16),
+                          style: appTheme()
+                              .textTheme
+                              .bodyMedium!
+                              .apply(color: AppColors.grey),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
                         Text(
                           'دوبلکس',
-                          style: TextStyle(
-                              fontFamily: 'sm',
-                              color: AppColors.black,
-                              fontSize: 16),
+                          style: appTheme()
+                              .textTheme
+                              .bodyMedium!
+                              .apply(color: AppColors.black),
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
-                    VerticalDivider(
+                    const VerticalDivider(
                       width: 20,
                       thickness: 1,
                       indent: 20,
                       endIndent: 20,
                       color: Color.fromARGB(255, 235, 239, 244),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     Column(
@@ -393,24 +389,24 @@ class InfoTab extends StatelessWidget {
                       children: [
                         Text(
                           'ساخت',
-                          style: TextStyle(
-                              fontFamily: 'sm',
-                              color: AppColors.grey,
-                              fontSize: 16),
+                          style: appTheme()
+                              .textTheme
+                              .bodyMedium!
+                              .apply(color: AppColors.grey),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
                         Text(
                           '۱۴۰۲',
-                          style: TextStyle(
-                              fontFamily: 'sm',
-                              color: AppColors.black,
-                              fontSize: 16),
+                          style: appTheme()
+                              .textTheme
+                              .bodyMedium!
+                              .apply(color: AppColors.black),
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                   ],
@@ -427,10 +423,9 @@ class InfoTab extends StatelessWidget {
                   const SizedBox(
                     width: 6,
                   ),
-                  const Text(
+                  Text(
                     'موقعیت مکانی',
-                    style: TextStyle(
-                        fontFamily: 'sb', color: AppColors.black, fontSize: 16),
+                    style: appTheme().textTheme.titleLarge,
                   ),
                 ],
               ),
@@ -470,12 +465,12 @@ class InfoTab extends StatelessWidget {
                             right: 15,
                             child: Row(
                               children: [
-                                const Text(
+                                Text(
                                   'گرگان، صیاد شیرا...',
-                                  style: TextStyle(
-                                      fontFamily: 'sm',
-                                      color: Colors.white,
-                                      fontSize: 16),
+                                  style: appTheme()
+                                      .textTheme
+                                      .titleLarge!
+                                      .apply(color: Colors.white),
                                 ),
                                 const SizedBox(
                                   width: 10,
@@ -493,7 +488,7 @@ class InfoTab extends StatelessWidget {
               const SizedBox(
                 height: 32,
               ),
-              const CallButtons()
+              callButtons()
             ],
           ),
         ),
@@ -517,59 +512,71 @@ class PriceTab extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                height: 125,
+                height: 120,
                 decoration: BoxDecoration(
                   border: Border.all(
                     color: AppColors.lightGrey,
                   ),
                   borderRadius: BorderRadius.circular(6),
                 ),
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
                     horizontal: 20,
                   ),
                   child: Column(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Row(
                         children: [
                           Text(
                             'قیمت هر متر:',
-                            style: TextStyle(fontFamily: 'sm', fontSize: 16),
+                            style: appTheme()
+                                .textTheme
+                                .bodyMedium!
+                                .apply(color: AppColors.black),
                           ),
-                          Spacer(),
+                          const Spacer(),
                           Text(
                             '۴۶٬۴۶۰٬۰۰۰',
-                            style: TextStyle(fontFamily: 'sm', fontSize: 16),
+                            style: appTheme()
+                                .textTheme
+                                .bodyMedium!
+                                .apply(color: AppColors.black),
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
-                      Divider(
+                      const Divider(
                         color: Color.fromARGB(255, 235, 239, 244),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Row(
                         children: [
                           Text(
                             'قیمت کل:',
-                            style: TextStyle(fontFamily: 'sm', fontSize: 16),
+                            style: appTheme()
+                                .textTheme
+                                .bodyMedium!
+                                .apply(color: AppColors.black),
                           ),
-                          Spacer(),
+                          const Spacer(),
                           Text(
                             '۲۳٬۲۳۰٬۰۰۰٬۰۰۰',
-                            style: TextStyle(fontFamily: 'sm', fontSize: 16),
+                            style: appTheme()
+                                .textTheme
+                                .bodyMedium!
+                                .apply(color: AppColors.black),
                           ),
-                          Divider(),
+                          const Divider(),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                     ],
@@ -579,7 +586,7 @@ class PriceTab extends StatelessWidget {
               const SizedBox(
                 height: 32,
               ),
-              const CallButtons()
+              callButtons()
             ],
           ),
         ),
@@ -619,11 +626,7 @@ class FacilityTab extends StatelessWidget {
                   const SizedBox(
                     width: 6,
                   ),
-                  const Text(
-                    'ویژگی ها',
-                    style: TextStyle(
-                        fontFamily: 'sb', color: AppColors.black, fontSize: 16),
-                  ),
+                  Text('ویژگی ها', style: appTheme().textTheme.titleLarge),
                 ],
               ),
               const SizedBox(
@@ -637,7 +640,7 @@ class FacilityTab extends StatelessWidget {
                   ),
                   borderRadius: BorderRadius.circular(6),
                 ),
-                child: const Padding(
+                child: Padding(
                   padding: EdgeInsets.symmetric(
                     horizontal: 20,
                   ),
@@ -648,21 +651,10 @@ class FacilityTab extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          Text(
-                            'سند',
-                            style: TextStyle(
-                                fontFamily: 'sm',
-                                fontSize: 16,
-                                color: AppColors.grey),
-                          ),
+                          Text('سند', style: appTheme().textTheme.bodyMedium),
                           Spacer(),
-                          Text(
-                            'تک برگ',
-                            style: TextStyle(
-                                fontFamily: 'sm',
-                                fontSize: 16,
-                                color: AppColors.grey),
-                          ),
+                          Text('تک برگ',
+                              style: appTheme().textTheme.bodyMedium),
                         ],
                       ),
                       SizedBox(
@@ -676,21 +668,10 @@ class FacilityTab extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          Text(
-                            'جهت ساختمان',
-                            style: TextStyle(
-                                fontFamily: 'sm',
-                                fontSize: 16,
-                                color: AppColors.grey),
-                          ),
+                          Text('جهت ساختمان',
+                              style: appTheme().textTheme.bodyMedium),
                           Spacer(),
-                          Text(
-                            'شمالی',
-                            style: TextStyle(
-                                fontFamily: 'sm',
-                                fontSize: 16,
-                                color: AppColors.grey),
-                          ),
+                          Text('شمالی', style: appTheme().textTheme.bodyMedium),
                           Divider(),
                         ],
                       ),
@@ -712,10 +693,9 @@ class FacilityTab extends StatelessWidget {
                   const SizedBox(
                     width: 6,
                   ),
-                  const Text(
+                  Text(
                     'امکانات',
-                    style: TextStyle(
-                        fontFamily: 'sb', color: AppColors.black, fontSize: 16),
+                    style: appTheme().textTheme.titleLarge,
                   ),
                 ],
               ),
@@ -742,13 +722,7 @@ class FacilityTab extends StatelessWidget {
                         height: 20,
                       ),
                       for (var title in facilities)
-                        Text(
-                          title,
-                          style: const TextStyle(
-                              fontFamily: 'sm',
-                              fontSize: 16,
-                              color: AppColors.grey),
-                        ),
+                        Text(title, style: appTheme().textTheme.bodyMedium),
                       const SizedBox(
                         width: double.infinity,
                         height: 20,
@@ -760,7 +734,7 @@ class FacilityTab extends StatelessWidget {
               const SizedBox(
                 height: 32,
               ),
-              const CallButtons()
+              callButtons()
             ],
           ),
         ),
@@ -779,17 +753,16 @@ class ExplainTab extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 45),
         child: Container(
           color: Colors.white,
-          child: const Column(
+          child: Column(
             children: [
               Text(
                 'ویلا ۵۰۰ متری در خیابان صیاد شیرازی ویو عالی وسط جنگل قیمت فوق العاده  گذاشتم فروش فوری  خریدار باشی تخفیف پای معامله میدم.',
-                style: TextStyle(
-                    fontFamily: 'sm', color: AppColors.grey, fontSize: 16),
+                style: appTheme().textTheme.bodyMedium,
               ),
               SizedBox(
                 height: 32,
               ),
-              CallButtons()
+              callButtons()
             ],
           ),
         ),
