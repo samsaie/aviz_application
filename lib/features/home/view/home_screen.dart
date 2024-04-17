@@ -1,6 +1,9 @@
+import 'package:aviz_application/features/all_hotPromotion_screen.dart';
+
 import '../../../Constants/theme.dart';
 import '../../../DI/di.dart';
 import '../../../Constants/color.dart';
+import '../../all_recentPromotion_screen.dart';
 import '../bloc/home_bloc.dart';
 import '../../../widgets/hot_promotion_card.dart';
 import '../../../widgets/recent_promotion_card.dart';
@@ -61,12 +64,12 @@ class ViewContainer extends StatelessWidget {
                             style: appTheme().textTheme.titleLarge!),
                         GestureDetector(
                           onTap: () {
-                            // Navigator.of(context).push(
-                            //   MaterialPageRoute(
-                            //     builder: (context) =>
-                            //         const HotPromotionsCardListScreen(),
-                            //   ),
-                            // );
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const AllHotPromotionScreen(),
+                              ),
+                            );
                           },
                           child: Text(
                             'مشاهده همه',
@@ -124,7 +127,14 @@ class ViewContainer extends StatelessWidget {
                         Text('آویز های اخیر',
                             style: appTheme().textTheme.titleLarge!),
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const AllRecentPromotionScreen(),
+                              ),
+                            );
+                          },
                           child: Text(
                             'مشاهده همه',
                             style: appTheme()

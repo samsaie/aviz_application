@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import '../Constants/theme.dart';
 import 'cached_network_image.dart';
 import '../Util/number_extension.dart';
@@ -21,8 +22,7 @@ class HotPromotionCard extends StatelessWidget {
         );
       },
       child: Container(
-        height: 267,
-        width: 224,
+        width: 210,
         clipBehavior: Clip.antiAlias,
         padding: const EdgeInsets.all(16),
         decoration: ShapeDecoration(
@@ -54,7 +54,7 @@ class HotPromotionCard extends StatelessWidget {
               ),
               child: CachedImage(
                 imageUrl: promotion.thumbnailUrl,
-                fit: BoxFit.fill,
+                fit: BoxFit.fitWidth,
               ),
             ),
             const SizedBox(height: 16),
