@@ -22,8 +22,18 @@ Widget otpForm(BuildContext context) {
             keyboardType: TextInputType.number,
             maxLength: 1,
             decoration: const InputDecoration(
+              focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: AppColors.red,
+                  width: 2.0,
+                ),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: AppColors.backgroundGrey,
+                ),
+              ),
               counterText: '',
-              border: OutlineInputBorder(),
               fillColor: AppColors.backgroundGrey,
               filled: true,
             ),
@@ -45,6 +55,17 @@ Widget otpForm(BuildContext context) {
             keyboardType: TextInputType.number,
             maxLength: 1,
             decoration: const InputDecoration(
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: AppColors.red,
+                    width: 2.0,
+                  ),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: AppColors.backgroundGrey,
+                  ),
+                ),
                 counterText: '',
                 border: OutlineInputBorder(),
                 fillColor: AppColors.backgroundGrey,
@@ -67,6 +88,17 @@ Widget otpForm(BuildContext context) {
             keyboardType: TextInputType.number,
             maxLength: 1,
             decoration: const InputDecoration(
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: AppColors.red,
+                    width: 2.0,
+                  ),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: AppColors.backgroundGrey,
+                  ),
+                ),
                 counterText: '',
                 border: OutlineInputBorder(),
                 fillColor: AppColors.backgroundGrey,
@@ -89,6 +121,17 @@ Widget otpForm(BuildContext context) {
             keyboardType: TextInputType.number,
             maxLength: 1,
             decoration: const InputDecoration(
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: AppColors.red,
+                    width: 2.0,
+                  ),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: AppColors.backgroundGrey,
+                  ),
+                ),
                 counterText: '',
                 border: OutlineInputBorder(),
                 fillColor: AppColors.backgroundGrey,

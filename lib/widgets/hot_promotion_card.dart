@@ -60,12 +60,15 @@ class HotPromotionCard extends StatelessWidget {
             const SizedBox(height: 16),
             SizedBox(
               child: Text(promotion.title,
+                  overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.right,
                   style: appTheme().textTheme.titleLarge),
             ),
             const SizedBox(height: 8),
             SizedBox(
               child: Text(promotion.description,
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 2,
                   textAlign: TextAlign.right,
                   style: appTheme().textTheme.bodySmall),
             ),

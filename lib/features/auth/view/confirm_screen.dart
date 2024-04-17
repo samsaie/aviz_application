@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import '../../../Constants/theme.dart';
 import '../../../widgets/buttons.dart';
+import '../../../widgets/otp.dart';
 import '../../../widgets/pin_code.dart';
 
 class ConfirmScreen extends StatefulWidget {
@@ -62,9 +63,11 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
               const SizedBox(
                 height: 32,
               ),
-              pinCodeBox(context),
-              //  otpForm(context),
-
+              // pinCodeBox(context),
+              otpForm(context),
+              const SizedBox(
+                height: 22,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
