@@ -168,23 +168,24 @@ class AvizTabBar extends StatelessWidget {
       pinned: true,
       delegate: _StickyTabBarDelegate(
         TabBar(
-            indicatorWeight: 0,
-            indicatorSize: TabBarIndicatorSize.tab,
-            indicator: BoxDecoration(
-              borderRadius: BorderRadius.circular(
-                6.0,
-              ),
-              color: AppColors.red,
+          indicatorWeight: 0,
+          indicatorSize: TabBarIndicatorSize.tab,
+          indicator: BoxDecoration(
+            borderRadius: BorderRadius.circular(
+              6.0,
             ),
-            labelStyle:
-                appTheme().textTheme.titleLarge!.apply(color: Colors.white),
-            unselectedLabelColor: AppColors.red,
-            tabs: const [
-              Tab(text: 'مشخصات'),
-              Tab(text: 'قیمت'),
-              Tab(text: 'امکانات'),
-              Tab(text: 'توضیحات'),
-            ]),
+            color: AppColors.red,
+          ),
+          labelStyle:
+              appTheme().textTheme.bodyMedium!.apply(color: Colors.white),
+          unselectedLabelColor: AppColors.red,
+          tabs: const [
+            Tab(text: 'مشخصات'),
+            Tab(text: 'قیمت'),
+            Tab(text: 'امکانات'),
+            Tab(text: 'توضیحات'),
+          ],
+        ),
       ),
     );
   }
@@ -473,7 +474,7 @@ class PriceTab extends StatelessWidget {
                             'قیمت هر متر:',
                             style: appTheme()
                                 .textTheme
-                                .bodyMedium!
+                                .titleMedium!
                                 .apply(color: AppColors.grey700),
                           ),
                           const Spacer(),
@@ -481,7 +482,7 @@ class PriceTab extends StatelessWidget {
                             '۴۶٬۴۶۰٬۰۰۰',
                             style: appTheme()
                                 .textTheme
-                                .bodyMedium!
+                                .titleMedium!
                                 .apply(color: AppColors.grey700),
                           ),
                         ],
@@ -501,7 +502,7 @@ class PriceTab extends StatelessWidget {
                             'قیمت کل:',
                             style: appTheme()
                                 .textTheme
-                                .bodyMedium!
+                                .titleMedium!
                                 .apply(color: AppColors.grey700),
                           ),
                           const Spacer(),
@@ -509,7 +510,7 @@ class PriceTab extends StatelessWidget {
                             '۲۳٬۲۳۰٬۰۰۰٬۰۰۰',
                             style: appTheme()
                                 .textTheme
-                                .bodyMedium!
+                                .titleMedium!
                                 .apply(color: AppColors.grey700),
                           ),
                           const Divider(),
