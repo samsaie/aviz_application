@@ -46,17 +46,17 @@ class SignScreen extends StatelessWidget {
                 TextFormField(
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    fillColor: AppColors.backgroundGrey,
+                    fillColor: AppColors.grey300,
                     filled: true,
                     labelText: 'نام و نام خانوادگی',
                     labelStyle: appTheme()
                         .textTheme
-                        .titleLarge!
-                        .apply(color: AppColors.lightGrey),
+                        .titleMedium!
+                        .apply(color: AppColors.grey400),
                     floatingLabelStyle: appTheme()
                         .textTheme
-                        .titleLarge!
-                        .apply(color: AppColors.lightGrey),
+                        .titleMedium!
+                        .apply(color: AppColors.grey400),
                   ),
                 ),
                 const SizedBox(
@@ -65,17 +65,17 @@ class SignScreen extends StatelessWidget {
                 TextFormField(
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    fillColor: AppColors.backgroundGrey,
+                    fillColor: AppColors.grey300,
                     filled: true,
                     labelText: 'شماره موبایل',
                     labelStyle: appTheme()
                         .textTheme
-                        .titleLarge!
-                        .apply(color: AppColors.lightGrey),
+                        .titleMedium!
+                        .apply(color: AppColors.grey400),
                     floatingLabelStyle: appTheme()
                         .textTheme
-                        .titleLarge!
-                        .apply(color: AppColors.lightGrey),
+                        .titleMedium!
+                        .apply(color: AppColors.grey400),
                   ),
                 ),
                 const Spacer(),

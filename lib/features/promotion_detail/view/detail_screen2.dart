@@ -1,3 +1,4 @@
+import 'package:aviz_application/widgets/appBars.dart';
 import 'package:flutter/material.dart';
 import '../../../Util/number_extension.dart';
 import '../../../widgets/buttons.dart';
@@ -41,227 +42,160 @@ class _DetailScreennState extends State<DetailScreenn> {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.transparent,
-          iconTheme: const IconThemeData(
-            color: AppColors.black,
-          ),
-          actionsIconTheme: const IconThemeData(
-            color: AppColors.black,
-          ),
-          actions: [
-            IconButton(
-              onPressed: () {
-                showDialog(
-                  context: context,
-                  builder: (context) => AlertDialog(
-                    title: const Text(
-                      'Information',
-                    ),
-                    content: const Text(
-                      'Info of this Ad',
-                      textAlign: TextAlign.center,
-                    ),
-                    actions: [
-                      Center(
-                        child: TextButton(
-                            onPressed: () => Navigator.pop(context),
-                            child: const Text('Ok')),
-                      )
-                    ],
-                  ),
-                );
-              },
-              icon: Image.asset('assets/images/information_icon.png'),
-            ),
-            IconButton(
-              onPressed: () {
-                showDialog(
-                  context: context,
-                  builder: (context) => AlertDialog(
-                    title: const Text(
-                      'Share',
-                    ),
-                    content: const Text(
-                      'Share this Ad',
-                      textAlign: TextAlign.center,
-                    ),
-                    actions: [
-                      Center(
-                        child: TextButton(
-                            onPressed: () => Navigator.pop(context),
-                            child: const Text('Ok')),
-                      )
-                    ],
-                  ),
-                );
-              },
-              icon: Image.asset('assets/images/share_icon.png'),
-            ),
-            IconButton(
-              icon: clicked
-                  ? Image.asset(
-                      'assets/images/save_icon.png',
-                      color: AppColors.red,
-                    )
-                  : Image.asset('assets/images/save_icon.png'),
-              onPressed: () {
-                setState(() {
-                  clicked = !clicked;
-                });
-              },
-            ),
-          ],
-          scrolledUnderElevation: 0,
+          title: DetailAppBar(),
         ),
-        body: SafeArea(
-          child: CustomScrollView(
-            slivers: [
-              SliverPadding(
-                padding: const EdgeInsets.all(16),
-                sliver: SliverToBoxAdapter(
-                  child: Column(
-                    children: [
-                      const SizedBox(height: 32),
-                      Container(
-                        color: Colors.white,
-                        height: 220.0,
-                        child: Center(
-                          child: SizedBox(
-                              width: double.maxFinite,
-                              child: CachedImage(
-                                imageUrl: promotion.thumbnailUrl,
-                                fit: BoxFit.cover,
-                              )),
-                        ),
+        body: CustomScrollView(
+          slivers: [
+            SliverPadding(
+              padding: const EdgeInsets.all(16),
+              sliver: SliverToBoxAdapter(
+                child: Column(
+                  children: [
+                    const SizedBox(height: 32),
+                    Container(
+                      color: Colors.white,
+                      height: 220.0,
+                      child: Center(
+                        child: SizedBox(
+                            width: double.maxFinite,
+                            child: CachedImage(
+                              imageUrl: promotion.thumbnailUrl,
+                              fit: BoxFit.cover,
+                            )),
                       ),
-                      const SizedBox(height: 32),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 8, vertical: 4),
-                            decoration: BoxDecoration(
-                              color: AppColors.lightGrey,
-                              borderRadius: BorderRadius.circular(4),
-                            ),
-                            child: Text(
-                              'آپارتمان',
-                              style: appTheme()
-                                  .textTheme
-                                  .bodySmall!
-                                  .apply(color: AppColors.red),
-                            ),
+                    ),
+                    const SizedBox(height: 32),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 8, vertical: 4),
+                          decoration: BoxDecoration(
+                            color: AppColors.grey300,
+                            borderRadius: BorderRadius.circular(4),
                           ),
-                          Text(
-                            '۱۶ دقیقه پیش در گرگان',
-                            style: appTheme().textTheme.bodySmall,
-                          )
-                        ],
-                      ),
-                      const SizedBox(height: 24),
-                      Row(
-                        children: [
-                          Text(
-                            promotion.title,
-                            textAlign: TextAlign.end,
-                            textDirection: TextDirection.rtl,
-                            style: appTheme().textTheme.titleLarge,
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 64),
-                      Container(
-                        height: 50,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(6),
-                          border:
-                              Border.all(width: 1, color: AppColors.lightGrey),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 16),
-                          child: GestureDetector(
-                            onTap: () {
-                              showDialog(
-                                context: context,
-                                builder: (context) => Directionality(
-                                    textDirection: TextDirection.rtl,
-                                    child: alertDialog(context)),
-                              );
-                            },
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  'هشدار های قبل از معامله!',
-                                  style: appTheme().textTheme.titleLarge,
-                                ),
-                                Image.asset(
-                                    'assets/images/grey_arrow_left_icon.png'),
-                              ],
-                            ),
+                          child: Text(
+                            'آپارتمان',
+                            style: appTheme()
+                                .textTheme
+                                .bodySmall!
+                                .apply(color: AppColors.red),
                           ),
                         ),
+                        Text(
+                          '۱۶ دقیقه پیش در گرگان',
+                          style: appTheme().textTheme.bodySmall,
+                        )
+                      ],
+                    ),
+                    const SizedBox(height: 24),
+                    Row(
+                      children: [
+                        Text(
+                          promotion.title,
+                          textAlign: TextAlign.end,
+                          textDirection: TextDirection.rtl,
+                          style: appTheme().textTheme.titleLarge,
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 64),
+                    Container(
+                      height: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(6),
+                        border: Border.all(width: 1, color: AppColors.grey400),
                       ),
-                      const SizedBox(height: 32),
-                      SizedBox(
-                        height: 29,
-                        child: ListView.builder(
-                          itemCount: sectionsList.length,
-                          scrollDirection: Axis.horizontal,
-                          itemBuilder: (context, index) {
-                            return Row(
-                              children: [
-                                GestureDetector(
-                                  onTap: () {
-                                    setState(() {
-                                      selectedSection = index;
-                                    });
-                                  },
-                                  child: Container(
-                                    height: 29,
-                                    decoration: BoxDecoration(
-                                      color: selectedSection == index
-                                          ? AppColors.red
-                                          : Colors.transparent,
-                                      borderRadius: BorderRadius.circular(4),
-                                    ),
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 4, vertical: 4),
-                                    child: Text(
-                                      sectionsList[index],
-                                      style: TextStyle(
-                                        fontFamily: appTheme()
-                                            .textTheme
-                                            .titleLarge!
-                                            .fontFamily,
-                                        fontSize: appTheme()
-                                            .textTheme
-                                            .titleLarge!
-                                            .fontSize,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        child: GestureDetector(
+                          onTap: () {
+                            showDialog(
+                              context: context,
+                              builder: (context) => Directionality(
+                                  textDirection: TextDirection.rtl,
+                                  child: alertDialog(context)),
+                            );
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'هشدار های قبل از معامله!',
+                                style: appTheme()
+                                    .textTheme
+                                    .titleMedium!
+                                    .apply(color: AppColors.grey700),
+                              ),
+                              Image.asset(
+                                  'assets/images/grey_arrow_left_icon.png'),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 32),
+                    SizedBox(
+                      height: 29,
+                      child: ListView.builder(
+                        itemCount: sectionsList.length,
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) {
+                          return Row(
+                            children: [
+                              GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    selectedSection = index;
+                                  });
+                                },
+                                child: Container(
+                                  height: 29,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
                                         color: selectedSection == index
-                                            ? Colors.white
-                                            : AppColors.red,
-                                      ),
+                                            ? AppColors.red
+                                            : AppColors.grey200),
+                                    color: selectedSection == index
+                                        ? AppColors.red
+                                        : Colors.transparent,
+                                    borderRadius: BorderRadius.circular(4),
+                                  ),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 4, vertical: 4),
+                                  child: Text(
+                                    sectionsList[index],
+                                    style: TextStyle(
+                                      fontFamily: appTheme()
+                                          .textTheme
+                                          .bodyMedium!
+                                          .fontFamily,
+                                      fontSize: appTheme()
+                                          .textTheme
+                                          .bodyMedium!
+                                          .fontSize,
+                                      color: selectedSection == index
+                                          ? Colors.white
+                                          : AppColors.red,
                                     ),
                                   ),
                                 ),
-                                const SizedBox(width: 26),
-                              ],
-                            );
-                          },
-                        ),
+                              ),
+                              const SizedBox(width: 26),
+                            ],
+                          );
+                        },
                       ),
-                      const SizedBox(height: 32),
-                      _getSectionPage(selectedSection),
-                      const SizedBox(height: 32),
-                    ],
-                  ),
+                    ),
+                    const SizedBox(height: 32),
+                    _getSectionPage(selectedSection),
+                    const SizedBox(height: 32),
+                  ],
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
@@ -329,7 +263,7 @@ class _DetailScreennState extends State<DetailScreenn> {
           width: double.infinity,
           height: 96,
           decoration: BoxDecoration(
-            border: Border.all(color: AppColors.lightGrey, width: 1),
+            border: Border.all(color: AppColors.grey300, width: 1),
             borderRadius: BorderRadius.circular(4),
           ),
           child: Column(
@@ -341,9 +275,16 @@ class _DetailScreennState extends State<DetailScreenn> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('سند', style: appTheme().textTheme.bodyMedium),
+                      Text('سند',
+                          style: appTheme()
+                              .textTheme
+                              .titleMedium!
+                              .apply(color: AppColors.grey500)),
                       Text(promotion.sanad,
-                          style: appTheme().textTheme.bodyMedium),
+                          style: appTheme()
+                              .textTheme
+                              .titleMedium!
+                              .apply(color: AppColors.grey500)),
                     ],
                   ),
                 ),
@@ -352,7 +293,7 @@ class _DetailScreennState extends State<DetailScreenn> {
                 indent: 16,
                 endIndent: 16,
                 thickness: 1,
-                color: Color.fromARGB(255, 235, 239, 244),
+                color: AppColors.grey200,
               ),
               Expanded(
                 child: Padding(
@@ -362,9 +303,15 @@ class _DetailScreennState extends State<DetailScreenn> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text('جهت ساختمان',
-                          style: appTheme().textTheme.bodyMedium),
+                          style: appTheme()
+                              .textTheme
+                              .titleMedium!
+                              .apply(color: AppColors.grey500)),
                       Text(promotion.direction,
-                          style: appTheme().textTheme.bodyMedium),
+                          style: appTheme()
+                              .textTheme
+                              .titleMedium!
+                              .apply(color: AppColors.grey500)),
                     ],
                   ),
                 ),
@@ -393,7 +340,7 @@ class _DetailScreennState extends State<DetailScreenn> {
           width: double.infinity,
           height: 56 * facilities.length.toDouble(),
           decoration: BoxDecoration(
-            border: Border.all(color: AppColors.lightGrey, width: 1),
+            border: Border.all(color: AppColors.grey300, width: 1),
             borderRadius: BorderRadius.circular(4),
           ),
           child: ListView.builder(
@@ -406,14 +353,17 @@ class _DetailScreennState extends State<DetailScreenn> {
                     padding:
                         const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     child: Text(facilities[index],
-                        style: appTheme().textTheme.bodyMedium),
+                        style: appTheme()
+                            .textTheme
+                            .titleMedium!
+                            .apply(color: AppColors.grey500)),
                   ),
                   index != (facilities.length - 1)
                       ? const Divider(
                           indent: 16,
                           endIndent: 16,
                           thickness: 1,
-                          color: Color.fromARGB(255, 235, 239, 244),
+                          color: AppColors.grey200,
                         )
                       : Container(),
                 ],
@@ -436,7 +386,7 @@ class _DetailScreennState extends State<DetailScreenn> {
           width: double.infinity,
           height: 100,
           decoration: BoxDecoration(
-            border: Border.all(color: AppColors.lightGrey, width: 1),
+            border: Border.all(color: AppColors.grey300, width: 1),
             borderRadius: BorderRadius.circular(4),
           ),
           child: Column(
@@ -452,15 +402,15 @@ class _DetailScreennState extends State<DetailScreenn> {
                         'قیمت هر متر:',
                         style: appTheme()
                             .textTheme
-                            .bodyMedium!
-                            .apply(color: AppColors.black),
+                            .titleMedium!
+                            .apply(color: AppColors.grey700),
                       ),
                       Text(
                         promotion.pricePerMeter.convertToPrice(),
                         style: appTheme()
                             .textTheme
-                            .bodyMedium!
-                            .apply(color: AppColors.black),
+                            .titleMedium!
+                            .apply(color: AppColors.grey700),
                       ),
                     ],
                   ),
@@ -470,7 +420,7 @@ class _DetailScreennState extends State<DetailScreenn> {
                 indent: 16,
                 endIndent: 16,
                 thickness: 1,
-                color: Color.fromARGB(255, 235, 239, 244),
+                color: AppColors.grey200,
               ),
               Padding(
                 padding:
@@ -482,15 +432,15 @@ class _DetailScreennState extends State<DetailScreenn> {
                       'قیمت کل:',
                       style: appTheme()
                           .textTheme
-                          .bodyMedium!
-                          .apply(color: AppColors.black),
+                          .titleMedium!
+                          .apply(color: AppColors.grey700),
                     ),
                     Text(
                       promotion.price.convertToPrice(),
                       style: appTheme()
                           .textTheme
-                          .bodyMedium!
-                          .apply(color: AppColors.black),
+                          .titleMedium!
+                          .apply(color: AppColors.grey700),
                     ),
                   ],
                 ),
@@ -512,7 +462,7 @@ class _DetailScreennState extends State<DetailScreenn> {
         Container(
           height: 98,
           decoration: BoxDecoration(
-            border: Border.all(color: AppColors.lightGrey, width: 1),
+            border: Border.all(color: AppColors.grey400, width: 1),
             borderRadius: BorderRadius.circular(4),
           ),
           child: Row(
@@ -528,14 +478,14 @@ class _DetailScreennState extends State<DetailScreenn> {
                       style: appTheme()
                           .textTheme
                           .bodyMedium!
-                          .apply(color: AppColors.grey),
+                          .apply(color: AppColors.grey500),
                     ),
                     Text(
                       promotion.meterage.toString(),
                       style: appTheme()
                           .textTheme
                           .bodyMedium!
-                          .apply(color: AppColors.black),
+                          .apply(color: AppColors.grey700),
                     ),
                   ],
                 ),
@@ -557,14 +507,14 @@ class _DetailScreennState extends State<DetailScreenn> {
                       style: appTheme()
                           .textTheme
                           .bodyMedium!
-                          .apply(color: AppColors.grey),
+                          .apply(color: AppColors.grey500),
                     ),
                     Text(
                       promotion.rooms.toString(),
                       style: appTheme()
                           .textTheme
                           .bodyMedium!
-                          .apply(color: AppColors.black),
+                          .apply(color: AppColors.grey700),
                     ),
                   ],
                 ),
@@ -586,14 +536,14 @@ class _DetailScreennState extends State<DetailScreenn> {
                       style: appTheme()
                           .textTheme
                           .bodyMedium!
-                          .apply(color: AppColors.grey),
+                          .apply(color: AppColors.grey500),
                     ),
                     Text(
                       promotion.floors.toString(),
                       style: appTheme()
                           .textTheme
                           .bodyMedium!
-                          .apply(color: AppColors.black),
+                          .apply(color: AppColors.grey700),
                     ),
                   ],
                 ),
@@ -615,14 +565,14 @@ class _DetailScreennState extends State<DetailScreenn> {
                       style: appTheme()
                           .textTheme
                           .bodyMedium!
-                          .apply(color: AppColors.grey),
+                          .apply(color: AppColors.grey500),
                     ),
                     Text(
                       promotion.buildYear.toString(),
                       style: appTheme()
                           .textTheme
                           .bodyMedium!
-                          .apply(color: AppColors.black),
+                          .apply(color: AppColors.grey700),
                     ),
                   ],
                 ),

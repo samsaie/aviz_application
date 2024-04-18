@@ -1,12 +1,13 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import '../../../Constants/color.dart';
+import '../../../features/dashboard_screen.dart';
 import '../../../Constants/theme.dart';
-import '../../../widgets/buttons.dart';
 import '../../../widgets/otp.dart';
-import '../../../widgets/pin_code.dart';
 
 class ConfirmScreen extends StatefulWidget {
-  const ConfirmScreen({super.key});
+  final bool isLogin;
+  const ConfirmScreen({super.key, required this.isLogin});
 
   @override
   State<ConfirmScreen> createState() => _ConfirmScreenState();
@@ -57,7 +58,9 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
                 height: 16,
               ),
               Text(
-                'کد ورود پیامک شده را وارد کنید',
+                widget.isLogin
+                    ? "کد ورود پیامک شده را وارد کنید"
+                    : "کد ثبت نام پیامک شده را وارد کنید",
                 style: appTheme().textTheme.bodyMedium,
               ),
               const SizedBox(
@@ -93,7 +96,27 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
                 ],
               ),
               const Spacer(),
-              confirmButton(context),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                  backgroundColor: AppColors.red,
+                  minimumSize: const Size(double.infinity, 40),
+                ),
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => DashboardScreen()),
+                  );
+                },
+                child: Text(
+                  widget.isLogin ? 'تایید ورود' : 'تایید ثبت نام',
+                  style: appTheme()
+                      .textTheme
+                      .titleLarge!
+                      .apply(color: Colors.white),
+                ),
+              ),
             ],
           ),
         ),

@@ -15,24 +15,24 @@ class SearchBox extends StatelessWidget {
           onChanged: (value) {},
           textDirection: TextDirection.rtl,
           textAlign: TextAlign.start,
-          cursorColor: AppColors.lightGrey,
+          cursorColor: AppColors.red,
           decoration: InputDecoration(
             contentPadding:
                 const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             suffixIcon: Image.asset('assets/images/search_icon.png'),
             hintTextDirection: TextDirection.rtl,
             hintText: 'جستجو...',
-            hintStyle: appTheme().textTheme.titleMedium,
+            hintStyle: appTheme().textTheme.bodyMedium,
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(4),
               borderSide: const BorderSide(
-                color: AppColors.backgroundGrey,
+                color: AppColors.grey300,
               ),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(4),
               borderSide: const BorderSide(
-                color: AppColors.backgroundGrey,
+                color: AppColors.grey300,
               ),
             ),
           ),

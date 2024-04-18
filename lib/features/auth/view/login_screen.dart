@@ -44,17 +44,17 @@ class LoginScreen extends StatelessWidget {
                 TextFormField(
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    fillColor: AppColors.backgroundGrey,
+                    fillColor: AppColors.grey300,
                     filled: true,
                     labelText: 'شماره موبایل',
                     labelStyle: appTheme()
                         .textTheme
-                        .titleLarge!
-                        .apply(color: AppColors.lightGrey),
+                        .titleMedium!
+                        .apply(color: AppColors.grey400),
                     floatingLabelStyle: appTheme()
                         .textTheme
-                        .titleLarge!
-                        .apply(color: AppColors.lightGrey),
+                        .titleMedium!
+                        .apply(color: AppColors.grey400),
                   ),
                 ),
                 const Spacer(),
@@ -70,10 +70,9 @@ class LoginScreen extends StatelessWidget {
                       children: [
                         TextSpan(
                           text: ' ثبت نام',
-                          style: appTheme()
-                              .textTheme
-                              .bodyMedium!
-                              .apply(color: AppColors.red),
+                          style: appTheme().textTheme.bodyMedium!.apply(
+                                color: AppColors.red,
+                              ),
                           recognizer: TapGestureRecognizer()
                             ..onTap = () {
                               Navigator.of(context).push(

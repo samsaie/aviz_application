@@ -1,3 +1,4 @@
+import 'package:aviz_application/widgets/appBars.dart';
 import 'package:flutter/material.dart';
 import '../../../widgets/alert_dialogs.dart';
 import '../../../widgets/buttons.dart';
@@ -16,7 +17,6 @@ class DetailScreen extends StatefulWidget {
 
 class _DetailScreenState extends State<DetailScreen> {
   late final Promotion promotion;
-  bool clicked = false;
 
   @override
   void setState(VoidCallback fn) {
@@ -30,69 +30,7 @@ class _DetailScreenState extends State<DetailScreen> {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         appBar: AppBar(
-          actions: [
-            IconButton(
-              onPressed: () {
-                showDialog(
-                  context: context,
-                  builder: (context) => AlertDialog(
-                    title: const Text(
-                      'Information',
-                    ),
-                    content: const Text(
-                      'Info of this Ad',
-                      textAlign: TextAlign.center,
-                    ),
-                    actions: [
-                      Center(
-                        child: TextButton(
-                            onPressed: () => Navigator.pop(context),
-                            child: const Text('Ok')),
-                      )
-                    ],
-                  ),
-                );
-              },
-              icon: Image.asset('assets/images/information_icon.png'),
-            ),
-            IconButton(
-              onPressed: () {
-                showDialog(
-                  context: context,
-                  builder: (context) => AlertDialog(
-                    title: const Text(
-                      'Share',
-                    ),
-                    content: const Text(
-                      'Share this Ad',
-                      textAlign: TextAlign.center,
-                    ),
-                    actions: [
-                      Center(
-                        child: TextButton(
-                            onPressed: () => Navigator.pop(context),
-                            child: const Text('Ok')),
-                      )
-                    ],
-                  ),
-                );
-              },
-              icon: Image.asset('assets/images/share_icon.png'),
-            ),
-            IconButton(
-              icon: clicked
-                  ? Image.asset(
-                      'assets/images/save_icon.png',
-                      color: AppColors.red,
-                    )
-                  : Image.asset('assets/images/save_icon.png'),
-              onPressed: () {
-                setState(() {
-                  clicked = !clicked;
-                });
-              },
-            ),
-          ],
+          title: DetailAppBar(),
         ),
         body: DefaultTabController(
           length: 4,
@@ -135,6 +73,7 @@ class HeaderContent extends StatelessWidget {
     return SliverList(
       delegate: SliverChildListDelegate(
         [
+          const SizedBox(height: 32),
           Container(
             color: Colors.white,
             height: 220.0,
@@ -186,7 +125,7 @@ class HeaderContent extends StatelessWidget {
             height: 50,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(6),
-              border: Border.all(width: 1, color: AppColors.lightGrey),
+              border: Border.all(width: 1, color: AppColors.grey200),
             ),
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -269,7 +208,7 @@ class InfoTab extends StatelessWidget {
                 height: 110,
                 decoration: BoxDecoration(
                   border: Border.all(
-                    color: AppColors.lightGrey,
+                    color: AppColors.grey200,
                   ),
                   borderRadius: BorderRadius.circular(6),
                 ),
@@ -287,7 +226,7 @@ class InfoTab extends StatelessWidget {
                           style: appTheme()
                               .textTheme
                               .bodyMedium!
-                              .apply(color: AppColors.grey),
+                              .apply(color: AppColors.grey500),
                         ),
                         const SizedBox(
                           height: 5,
@@ -297,7 +236,7 @@ class InfoTab extends StatelessWidget {
                           style: appTheme()
                               .textTheme
                               .bodyMedium!
-                              .apply(color: AppColors.black),
+                              .apply(color: AppColors.grey700),
                         )
                       ],
                     ),
@@ -309,7 +248,7 @@ class InfoTab extends StatelessWidget {
                       thickness: 1,
                       indent: 20,
                       endIndent: 20,
-                      color: Color.fromARGB(255, 235, 239, 244),
+                      color: AppColors.grey200,
                     ),
                     const SizedBox(
                       width: 10,
@@ -322,7 +261,7 @@ class InfoTab extends StatelessWidget {
                           style: appTheme()
                               .textTheme
                               .bodyMedium!
-                              .apply(color: AppColors.grey),
+                              .apply(color: AppColors.grey500),
                         ),
                         const SizedBox(
                           height: 5,
@@ -332,7 +271,7 @@ class InfoTab extends StatelessWidget {
                           style: appTheme()
                               .textTheme
                               .bodyMedium!
-                              .apply(color: AppColors.black),
+                              .apply(color: AppColors.grey700),
                         )
                       ],
                     ),
@@ -357,7 +296,7 @@ class InfoTab extends StatelessWidget {
                           style: appTheme()
                               .textTheme
                               .bodyMedium!
-                              .apply(color: AppColors.grey),
+                              .apply(color: AppColors.grey500),
                         ),
                         const SizedBox(
                           height: 5,
@@ -367,7 +306,7 @@ class InfoTab extends StatelessWidget {
                           style: appTheme()
                               .textTheme
                               .bodyMedium!
-                              .apply(color: AppColors.black),
+                              .apply(color: AppColors.grey700),
                         )
                       ],
                     ),
@@ -392,7 +331,7 @@ class InfoTab extends StatelessWidget {
                           style: appTheme()
                               .textTheme
                               .bodyMedium!
-                              .apply(color: AppColors.grey),
+                              .apply(color: AppColors.grey500),
                         ),
                         const SizedBox(
                           height: 5,
@@ -402,7 +341,7 @@ class InfoTab extends StatelessWidget {
                           style: appTheme()
                               .textTheme
                               .bodyMedium!
-                              .apply(color: AppColors.black),
+                              .apply(color: AppColors.grey700),
                         )
                       ],
                     ),
@@ -515,7 +454,7 @@ class PriceTab extends StatelessWidget {
                 height: 120,
                 decoration: BoxDecoration(
                   border: Border.all(
-                    color: AppColors.lightGrey,
+                    color: AppColors.grey400,
                   ),
                   borderRadius: BorderRadius.circular(6),
                 ),
@@ -535,7 +474,7 @@ class PriceTab extends StatelessWidget {
                             style: appTheme()
                                 .textTheme
                                 .bodyMedium!
-                                .apply(color: AppColors.black),
+                                .apply(color: AppColors.grey700),
                           ),
                           const Spacer(),
                           Text(
@@ -543,7 +482,7 @@ class PriceTab extends StatelessWidget {
                             style: appTheme()
                                 .textTheme
                                 .bodyMedium!
-                                .apply(color: AppColors.black),
+                                .apply(color: AppColors.grey700),
                           ),
                         ],
                       ),
@@ -563,7 +502,7 @@ class PriceTab extends StatelessWidget {
                             style: appTheme()
                                 .textTheme
                                 .bodyMedium!
-                                .apply(color: AppColors.black),
+                                .apply(color: AppColors.grey700),
                           ),
                           const Spacer(),
                           Text(
@@ -571,7 +510,7 @@ class PriceTab extends StatelessWidget {
                             style: appTheme()
                                 .textTheme
                                 .bodyMedium!
-                                .apply(color: AppColors.black),
+                                .apply(color: AppColors.grey700),
                           ),
                           const Divider(),
                         ],
@@ -636,7 +575,7 @@ class FacilityTab extends StatelessWidget {
                 height: 125,
                 decoration: BoxDecoration(
                   border: Border.all(
-                    color: AppColors.lightGrey,
+                    color: AppColors.grey400,
                   ),
                   borderRadius: BorderRadius.circular(6),
                 ),
@@ -706,7 +645,7 @@ class FacilityTab extends StatelessWidget {
                 // height: 360,
                 decoration: BoxDecoration(
                   border: Border.all(
-                    color: AppColors.lightGrey,
+                    color: AppColors.grey400,
                   ),
                   borderRadius: BorderRadius.circular(6),
                 ),

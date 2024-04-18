@@ -1,3 +1,4 @@
+import 'package:aviz_application/Constants/theme.dart';
 import 'package:flutter/material.dart';
 import 'DI/di.dart';
 import 'features/welcome_screen.dart';
@@ -13,6 +14,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: appTheme(),
       home: Directionality(
         textDirection: TextDirection.rtl,
         child: Scaffold(

@@ -22,12 +22,12 @@ Widget pinCodeBox(BuildContext context) {
           pinTheme: PinTheme(
             shape: PinCodeFieldShape.box,
             fieldWidth: 80,
-            inactiveColor: AppColors.backgroundGrey,
+            inactiveColor: AppColors.grey300,
             selectedColor: AppColors.red,
-            activeFillColor: AppColors.backgroundGrey,
-            selectedFillColor: AppColors.backgroundGrey,
-            inactiveFillColor: AppColors.backgroundGrey,
-            activeColor: AppColors.backgroundGrey,
+            activeFillColor: AppColors.grey300,
+            selectedFillColor: AppColors.grey300,
+            inactiveFillColor: AppColors.grey300,
+            activeColor: AppColors.grey300,
             borderRadius: BorderRadius.circular(6),
           ),
           onChanged: (value) {

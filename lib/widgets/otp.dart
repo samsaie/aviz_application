@@ -30,11 +30,11 @@ Widget otpForm(BuildContext context) {
               ),
               enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(
-                  color: AppColors.backgroundGrey,
+                  color: AppColors.grey300,
                 ),
               ),
               counterText: '',
-              fillColor: AppColors.backgroundGrey,
+              fillColor: AppColors.grey300,
               filled: true,
             ),
             textAlign: TextAlign.center,
@@ -63,12 +63,12 @@ Widget otpForm(BuildContext context) {
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: AppColors.backgroundGrey,
+                    color: AppColors.grey300,
                   ),
                 ),
                 counterText: '',
                 border: OutlineInputBorder(),
-                fillColor: AppColors.backgroundGrey,
+                fillColor: AppColors.grey300,
                 filled: true),
             textAlign: TextAlign.center,
             style: const TextStyle(fontFamily: 'sm', fontSize: 16),
@@ -96,12 +96,12 @@ Widget otpForm(BuildContext context) {
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: AppColors.backgroundGrey,
+                    color: AppColors.grey300,
                   ),
                 ),
                 counterText: '',
                 border: OutlineInputBorder(),
-                fillColor: AppColors.backgroundGrey,
+                fillColor: AppColors.grey300,
                 filled: true),
             textAlign: TextAlign.center,
             style: const TextStyle(fontFamily: 'sm', fontSize: 16),
@@ -129,12 +129,12 @@ Widget otpForm(BuildContext context) {
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: AppColors.backgroundGrey,
+                    color: AppColors.grey300,
                   ),
                 ),
                 counterText: '',
                 border: OutlineInputBorder(),
-                fillColor: AppColors.backgroundGrey,
+                fillColor: AppColors.grey300,
                 filled: true),
             textAlign: TextAlign.center,
             style: const TextStyle(fontFamily: 'sm', fontSize: 16),

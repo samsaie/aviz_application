@@ -49,7 +49,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 effect: const ExpandingDotsEffect(
                   dotHeight: 8,
                   dotWidth: 8,
-                  dotColor: AppColors.backgroundGrey,
+                  dotColor: AppColors.grey300,
                   activeDotColor: AppColors.red,
                 ),
               ),

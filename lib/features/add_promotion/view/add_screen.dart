@@ -1,3 +1,4 @@
+import 'package:aviz_application/Constants/theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -39,10 +40,9 @@ class AddScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset('assets/images/logo_type.png'),
-              const Text(
+              Text(
                 'دسته بندی ',
-                style: TextStyle(
-                    fontFamily: 'sm', fontSize: 16, color: AppColors.red),
+                style: appTheme().textTheme.titleLarge,
               )
             ],
           ),

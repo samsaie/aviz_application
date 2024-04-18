@@ -3,6 +3,7 @@ import 'package:aviz_application/features/all_hotPromotion_screen.dart';
 import '../../../Constants/theme.dart';
 import '../../../DI/di.dart';
 import '../../../Constants/color.dart';
+import '../../../widgets/appBars.dart';
 import '../../all_recentPromotion_screen.dart';
 import '../bloc/home_bloc.dart';
 import '../../../widgets/hot_promotion_card.dart';
@@ -48,12 +49,7 @@ class ViewContainer extends StatelessWidget {
           body: SafeArea(
             child: CustomScrollView(
               slivers: [
-                SliverAppBar(
-                  title:
-                      Image.asset('assets/images/logo_with_not_background.png'),
-                  centerTitle: true,
-                  backgroundColor: Colors.transparent,
-                ),
+                const HomeAppBar(),
                 SliverToBoxAdapter(
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(20, 0, 20, 10),
@@ -76,7 +72,7 @@ class ViewContainer extends StatelessWidget {
                             style: appTheme()
                                 .textTheme
                                 .bodyMedium!
-                                .apply(color: AppColors.lightGrey),
+                                .apply(color: AppColors.grey400),
                           ),
                         ),
                       ],
@@ -140,7 +136,7 @@ class ViewContainer extends StatelessWidget {
                             style: appTheme()
                                 .textTheme
                                 .bodyMedium!
-                                .apply(color: AppColors.lightGrey),
+                                .apply(color: AppColors.grey400),
                           ),
                         ),
                       ],

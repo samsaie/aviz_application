@@ -62,7 +62,7 @@ class HotPromotionCard extends StatelessWidget {
               child: Text(promotion.title,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.right,
-                  style: appTheme().textTheme.titleLarge),
+                  style: appTheme().textTheme.titleSmall),
             ),
             const SizedBox(height: 8),
             SizedBox(
@@ -81,7 +81,7 @@ class HotPromotionCard extends StatelessWidget {
                   style: appTheme()
                       .textTheme
                       .bodySmall!
-                      .apply(color: AppColors.black),
+                      .apply(color: AppColors.grey700),
                 ),
                 const Spacer(),
                 Text(

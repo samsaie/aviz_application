@@ -31,7 +31,7 @@ Widget getButtons(BuildContext context) {
           },
           child: Text(
             'ثبت نام',
-            style: appTheme().textTheme.titleLarge!.apply(color: Colors.white),
+            style: appTheme().textTheme.titleMedium!.apply(color: Colors.white),
           ),
         ),
       ),
@@ -58,7 +58,7 @@ Widget getButtons(BuildContext context) {
           },
           child: Text(
             'ورود',
-            style: appTheme().textTheme.titleLarge!.apply(color: Colors.red),
+            style: appTheme().textTheme.titleMedium!.apply(color: Colors.red),
           ),
         ),
       ),
@@ -71,17 +71,10 @@ Widget nextButton(BuildContext context) {
     height: 50,
     width: double.infinity,
     child: ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(4),
-        ),
-        backgroundColor: AppColors.red,
-        foregroundColor: Colors.white,
-      ),
       onPressed: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => const ConfirmScreen(),
+            builder: (context) => ConfirmScreen(isLogin: true),
           ),
         );
       },
@@ -90,7 +83,7 @@ Widget nextButton(BuildContext context) {
         children: [
           Text(
             'مرحله بعد',
-            style: appTheme().textTheme.titleLarge!.apply(color: Colors.white),
+            style: appTheme().textTheme.titleMedium!.apply(color: Colors.white),
           ),
           const SizedBox(
             width: 10,
@@ -102,31 +95,31 @@ Widget nextButton(BuildContext context) {
   );
 }
 
-Widget confirmButton(BuildContext context) {
-  return SizedBox(
-    height: 50,
-    width: double.infinity,
-    child: ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(4),
+class confirmButton extends StatelessWidget {
+  final bool isLogin;
+  const confirmButton(this.isLogin, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 50,
+      width: double.infinity,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(),
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const DashboardScreen(),
+            ),
+          );
+        },
+        child: Text(
+          isLogin ? 'تایید ورود' : 'تایید ثبت نام',
+          style: appTheme().textTheme.titleLarge!.apply(color: Colors.white),
         ),
-        backgroundColor: AppColors.red,
-        foregroundColor: Colors.white,
       ),
-      onPressed: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) => const DashboardScreen(),
-          ),
-        );
-      },
-      child: Text(
-        'تایید',
-        style: appTheme().textTheme.titleLarge!.apply(color: Colors.white),
-      ),
-    ),
-  );
+    );
+  }
 }
 
 Widget callButtons() {

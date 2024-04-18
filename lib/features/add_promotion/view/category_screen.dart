@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../Constants/color.dart';
 import '../../../Constants/theme.dart';
+import '../../../widgets/appBars.dart';
 import '../../dashboard_screen.dart';
 
 class CategoryScreen extends StatefulWidget {
@@ -35,43 +36,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
       textDirection: TextDirection.ltr,
       child: CustomScrollView(
         slivers: [
-          SliverAppBar(
-            leading: GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const DashboardScreen(),
-                  ),
-                );
-              },
-              child: const Icon(CupertinoIcons.clear),
-            ),
-            actions: [
-              IconButton(
-                onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const DashboardScreen(),
-                    ),
-                  );
-                },
-                icon: const Icon(CupertinoIcons.right_chevron),
-              ),
-            ],
-            title: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset('assets/images/logo_type.png'),
-                const Text(
-                  'دسته بندی ',
-                  style: TextStyle(
-                      fontFamily: 'sm', fontSize: 16, color: AppColors.red),
-                )
-              ],
-            ),
-            centerTitle: true,
-            backgroundColor: Colors.transparent,
-          ),
+          const categoryAppBar(),
           SliverPadding(
             padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
             sliver: _getCategoriesList(),
@@ -96,21 +61,19 @@ class _CategoryScreenState extends State<CategoryScreen> {
                     const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 decoration: BoxDecoration(
                     border: Border.all(
-                      color: AppColors.lightGrey,
+                      color: AppColors.grey400,
                     ),
                     borderRadius: BorderRadius.circular(6)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   textDirection: TextDirection.rtl,
                   children: [
-                    Text(
-                      categories[index],
-                      textAlign: TextAlign.end,
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontFamily: appTheme().textTheme.titleSmall!.fontFamily,
-                      ),
-                    ),
+                    Text(categories[index],
+                        textAlign: TextAlign.end,
+                        style: appTheme()
+                            .textTheme
+                            .bodyMedium!
+                            .apply(color: AppColors.grey700)),
                     Image.asset('assets/images/red_arrow_left_icon.png')
                   ],
                 ),

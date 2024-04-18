@@ -36,10 +36,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
               },
               currentIndex: selectedBottomNavigationIndex,
               type: BottomNavigationBarType.fixed,
-              backgroundColor: const Color(0xffF9FAFB),
+              backgroundColor: AppColors.grey200,
               elevation: 0,
               selectedItemColor: AppColors.red,
-              unselectedItemColor: AppColors.lightGrey,
+              unselectedItemColor: AppColors.grey400,
               selectedFontSize: 14,
               unselectedFontSize: 14,
               selectedLabelStyle: const TextStyle(

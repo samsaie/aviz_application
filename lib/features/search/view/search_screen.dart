@@ -1,3 +1,4 @@
+import 'package:aviz_application/widgets/appBars.dart';
 import 'package:flutter/material.dart';
 
 import '../../../widgets/search_box.dart';
@@ -14,7 +15,7 @@ class _SearchScreenState extends State<SearchScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Image.asset('assets/images/logo_type.png'),
+        title: searchAppBar(),
       ),
       body: const SafeArea(
         child: CustomScrollView(

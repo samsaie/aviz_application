@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../Constants/color.dart';
 import '../../../Constants/theme.dart';
+import '../../../widgets/appBars.dart';
+import '../../../widgets/search_box.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -10,24 +12,7 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset('assets/images/logo_type.png'),
-            Text(
-              'من',
-              style: TextStyle(
-                fontFamily: appTheme().textTheme.titleMedium!.fontFamily,
-                fontSize: 18,
-                color: AppColors.red,
-              ),
-            )
-          ],
-        ),
-        centerTitle: true,
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        scrolledUnderElevation: 0,
+        title: profileAppBar(),
       ),
       body: SafeArea(
         child: CustomScrollView(
@@ -37,33 +22,7 @@ class ProfileScreen extends StatelessWidget {
               sliver: SliverToBoxAdapter(
                 child: Column(
                   children: [
-                    const SizedBox(height: 32),
-                    TextField(
-                      textDirection: TextDirection.rtl,
-                      textAlign: TextAlign.start,
-                      cursorColor: AppColors.grey,
-                      decoration: InputDecoration(
-                        contentPadding: const EdgeInsets.symmetric(
-                            horizontal: 16, vertical: 8),
-                        suffixIcon:
-                            Image.asset('assets/images/search_icon.png'),
-                        hintTextDirection: TextDirection.rtl,
-                        hintText: 'جستجو...',
-                        hintStyle: appTheme().textTheme.titleMedium,
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(4),
-                          borderSide: const BorderSide(
-                            color: AppColors.backgroundGrey,
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(4),
-                          borderSide: const BorderSide(
-                            color: AppColors.black,
-                          ),
-                        ),
-                      ),
-                    ),
+                    const SearchBox(),
                     const SizedBox(height: 32),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -85,18 +44,20 @@ class ProfileScreen extends StatelessWidget {
                       height: 95,
                       padding: const EdgeInsets.symmetric(horizontal: 16),
                       decoration: BoxDecoration(
-                        border: Border.all(
-                            color: AppColors.backgroundGrey, width: 1),
+                        border: Border.all(color: AppColors.grey300, width: 1),
                         borderRadius: BorderRadius.circular(4),
                       ),
                       child: Row(
                         textDirection: TextDirection.rtl,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Image.asset(
                             'assets/images/Vector.png',
                             scale: 4,
+                          ),
+                          SizedBox(
+                            width: 20,
                           ),
                           Column(
                             textDirection: TextDirection.rtl,
@@ -112,7 +73,7 @@ class ProfileScreen extends StatelessWidget {
                                       .fontFamily,
                                   fontSize:
                                       appTheme().textTheme.titleSmall!.fontSize,
-                                  color: AppColors.black,
+                                  color: AppColors.grey700,
                                 ),
                               ),
                               const SizedBox(height: 20),
@@ -130,7 +91,7 @@ class ProfileScreen extends StatelessWidget {
                                           .textTheme
                                           .titleSmall!
                                           .fontSize,
-                                      color: AppColors.black,
+                                      color: AppColors.grey700,
                                     ),
                                   ),
                                   const SizedBox(width: 8),
@@ -157,6 +118,7 @@ class ProfileScreen extends StatelessWidget {
                               ),
                             ],
                           ),
+                          Spacer(),
                           Column(
                             children: [
                               const SizedBox(height: 16),
@@ -169,8 +131,7 @@ class ProfileScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 32),
-                    const Divider(
-                        color: AppColors.backgroundGrey, thickness: 1),
+                    const Divider(color: AppColors.grey300, thickness: 1),
                     const SizedBox(height: 32),
                   ],
                 ),
@@ -194,7 +155,7 @@ class ProfileScreen extends StatelessWidget {
                             fontWeight:
                                 appTheme().textTheme.titleSmall!.fontWeight,
                             fontSize: appTheme().textTheme.titleSmall!.fontSize,
-                            color: AppColors.grey,
+                            color: AppColors.grey500,
                           ),
                         ),
                         Text(
@@ -203,7 +164,7 @@ class ProfileScreen extends StatelessWidget {
                             fontWeight:
                                 appTheme().textTheme.titleSmall!.fontWeight,
                             fontSize: appTheme().textTheme.titleSmall!.fontSize,
-                            color: AppColors.grey,
+                            color: AppColors.grey500,
                           ),
                         )
                       ],
@@ -247,7 +208,7 @@ class ContentList extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 decoration: BoxDecoration(
-                    border: Border.all(color: AppColors.backgroundGrey),
+                    border: Border.all(color: AppColors.grey300),
                     borderRadius: BorderRadius.circular(6)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -266,14 +227,14 @@ class ContentList extends StatelessWidget {
                                 appTheme().textTheme.titleMedium!.fontFamily,
                             fontSize:
                                 appTheme().textTheme.titleMedium!.fontSize,
-                            color: AppColors.black,
+                            color: AppColors.grey700,
                           ),
                         ),
                       ],
                     ),
                     const ImageIcon(
                       AssetImage('assets/images/arrow-left.png'),
-                      color: AppColors.grey,
+                      color: AppColors.grey500,
                     )
                   ],
                 ),

@@ -65,7 +65,7 @@ class RecentPromotionCard extends StatelessWidget {
                     child: Text(promotion.title,
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.right,
-                        style: appTheme().textTheme.titleLarge),
+                        style: appTheme().textTheme.titleSmall),
                   ),
                   const SizedBox(height: 8),
                   SizedBox(
@@ -75,7 +75,7 @@ class RecentPromotionCard extends StatelessWidget {
                         textAlign: TextAlign.right,
                         style: appTheme().textTheme.bodySmall),
                   ),
-                  const SizedBox(height: 16),
+                  Spacer(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -86,7 +86,7 @@ class RecentPromotionCard extends StatelessWidget {
                         style: appTheme()
                             .textTheme
                             .bodySmall!
-                            .apply(color: AppColors.black),
+                            .apply(color: AppColors.grey700),
                       ),
                       const Spacer(),
                       Text(
