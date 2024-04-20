@@ -1,8 +1,6 @@
 import 'package:aviz_application/Constants/theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../../../Constants/color.dart';
 import '../../dashboard_screen.dart';
 
 class AddScreen extends StatelessWidget {

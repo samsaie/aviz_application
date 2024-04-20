@@ -1,9 +1,7 @@
 import 'package:aviz_application/widgets/hot_promotion_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../DI/di.dart';
-import '../widgets/recent_promotion_card.dart';
 import 'home/bloc/home_bloc.dart';
 
 class AllHotPromotionScreen extends StatefulWidget {

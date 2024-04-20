@@ -1,10 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import '../../../Constants/color.dart';
 import '../../../Constants/theme.dart';
 import '../../../widgets/appBars.dart';
-import '../../dashboard_screen.dart';
 
 class CategoryScreen extends StatefulWidget {
   final String type;
