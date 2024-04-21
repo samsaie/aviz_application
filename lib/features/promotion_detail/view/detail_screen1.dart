@@ -46,7 +46,7 @@ class _DetailScreenState extends State<DetailScreen> {
                 ),
                 const SliverPadding(
                   padding: EdgeInsets.fromLTRB(16, 10, 16, 10),
-                  sliver: AvizTabBar(),
+                  sliver: DetailTabBar(),
                 ),
               ];
             },
@@ -157,8 +157,8 @@ class HeaderContent extends StatelessWidget {
   }
 }
 
-class AvizTabBar extends StatelessWidget {
-  const AvizTabBar({
+class DetailTabBar extends StatelessWidget {
+  const DetailTabBar({
     super.key,
   });
 

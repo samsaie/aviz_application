@@ -40,22 +40,10 @@ ThemeData appTheme() {
         backgroundColor: AppColors.red,
         foregroundColor: Colors.white,
         shape: const ContinuousRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(8))),
-        surfaceTintColor: Colors.transparent,
-      ),
-    ),
-    outlinedButtonTheme: OutlinedButtonThemeData(
-      style: OutlinedButton.styleFrom(
-        shape: const ContinuousRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(8))),
-        surfaceTintColor: Colors.transparent,
-      ),
-    ),
-    textButtonTheme: TextButtonThemeData(
-      style: TextButton.styleFrom(
-        foregroundColor: Colors.black,
-        shape: const ContinuousRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(8))),
+          borderRadius: BorderRadius.all(
+            Radius.circular(8),
+          ),
+        ),
         surfaceTintColor: Colors.transparent,
       ),
     ),

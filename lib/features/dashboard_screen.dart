@@ -1,3 +1,5 @@
+import 'package:aviz_application/features/add_promotion/view/sub_category_screen.dart';
+
 import '../Constants/color.dart';
 import 'add_promotion/view/category_screen.dart';
 
@@ -118,10 +120,7 @@ List<Widget> getScreen() {
   return <Widget>[
     const HomeScreen(),
     const SearchScreen(),
-    CategoryScreen(
-      type: 'cat',
-      onFinish: (value) {},
-    ),
+    const CategoryScreen(),
     const ProfileScreen()
   ];
 }

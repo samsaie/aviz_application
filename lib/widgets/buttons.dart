@@ -1,4 +1,4 @@
-import 'package:aviz_application/Constants/theme.dart';
+import '../../Constants/theme.dart';
 
 import '../features/dashboard_screen.dart';
 import 'package:flutter/material.dart';
@@ -90,6 +90,21 @@ Widget nextButton(BuildContext context) {
           ),
           Image.asset('assets/images/arrow-left.png')
         ],
+      ),
+    ),
+  );
+}
+
+Widget next2Button() {
+  return SizedBox(
+    height: 50,
+    width: double.infinity,
+    child: ElevatedButton(
+      style: appTheme().elevatedButtonTheme.style,
+      onPressed: () {},
+      child: Text(
+        'بعدی',
+        style: appTheme().textTheme.titleMedium!.apply(color: Colors.white),
       ),
     ),
   );

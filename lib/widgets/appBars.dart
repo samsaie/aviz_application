@@ -40,29 +40,8 @@ class categoryAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverAppBar(
-      leading: GestureDetector(
-        onTap: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) => const DashboardScreen(),
-            ),
-          );
-        },
-        child: const Icon(CupertinoIcons.clear),
-      ),
-      actions: [
-        IconButton(
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => const DashboardScreen(),
-              ),
-            );
-          },
-          icon: const Icon(CupertinoIcons.right_chevron),
-        ),
-      ],
+    return AppBar(
+      titleSpacing: 0,
       title: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -72,6 +51,32 @@ class categoryAppBar extends StatelessWidget {
                   appTheme().textTheme.titleLarge!.apply(color: AppColors.red))
         ],
       ),
+      automaticallyImplyLeading: false,
+      actions: [
+        GestureDetector(
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => const DashboardScreen(),
+              ),
+            );
+          },
+          child: const Icon(CupertinoIcons.clear),
+        ),
+      ],
+      // actions: [
+      //   IconButton(
+      //     onPressed: () {
+      //       Navigator.of(context).push(
+      //         MaterialPageRoute(
+      //           builder: (context) => const DashboardScreen(),
+      //         ),
+      //       );
+      //     },
+      //     icon: const Icon(CupertinoIcons.right_chevron),
+      //   ),
+      // ],
+
       centerTitle: true,
       backgroundColor: Colors.transparent,
     );
@@ -85,7 +90,7 @@ class AddAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverAppBar(
+    return AppBar(
       leading: GestureDetector(
         onTap: () {
           Navigator.of(context).push(

@@ -1,40 +1,34 @@
-import 'package:aviz_application/features/add_promotion/view/sub_category_screen.dart';
+import 'package:aviz_application/features/add_promotion/view/register_promotion_detail_screen.dart.dart';
 import 'package:flutter/material.dart';
 import '../../../Constants/color.dart';
 import '../../../Constants/theme.dart';
 import '../../../widgets/appBars.dart';
 
-class CategoryScreen extends StatefulWidget {
-  const CategoryScreen({
+class SubCategoryScreen extends StatefulWidget {
+  const SubCategoryScreen({
     super.key,
   });
 
   @override
-  State<CategoryScreen> createState() => _CategoryScreenState();
+  State<SubCategoryScreen> createState() => _SubCategoryScreenState();
 }
 
-class _CategoryScreenState extends State<CategoryScreen> {
+class _SubCategoryScreenState extends State<SubCategoryScreen> {
   List<String> categories = [
-    'اجاره مسکونی',
-    'فروش مسکونی',
-    'فروش دفاتر اداری و تجاری',
-    'اجاره دفاتر اداری و تجاری',
-    'اجاره کوتاه مدت',
-    'پروژه های ساخت و ساز',
+    'فروش آپارتمان',
+    'فروش خانه و ویلا',
+    'فروش زمین و کلنگی',
   ];
 
   @override
   Widget build(BuildContext context) {
-    return Directionality(
-      textDirection: TextDirection.ltr,
-      child: Scaffold(
-        appBar: AppBar(
-          title: const categoryAppBar(),
-        ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
-          child: _getCategoriesList(),
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const categoryAppBar(),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
+        child: _getCategoriesList(),
       ),
     );
   }
@@ -48,7 +42,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
           onTap: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (context) => const SubCategoryScreen(),
+                builder: (context) => const RegisterPromotionDetailScreen(),
               ),
             );
           },
