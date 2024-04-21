@@ -19,7 +19,6 @@ class _RegisterPromotionDetailScreenState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
         title: const AddAppBar(),
       ),
       body: const Directionality(
@@ -27,19 +26,19 @@ class _RegisterPromotionDetailScreenState
         child: SingleChildScrollView(
           child: Column(
             children: [
-              _GetSelectCategory(),
+              _GetSelectCategoryContainer(),
               Divider(
                 endIndent: 20,
                 indent: 20,
                 color: AppColors.grey200,
               ),
-              _GetPropertyCategory(),
+              _GetPropertyContainer(),
               Divider(
                 endIndent: 20,
                 indent: 20,
                 color: AppColors.grey200,
               ),
-              _GetFacilityCategory()
+              _GetFacilityContainer()
             ],
           ),
         ),
@@ -48,14 +47,16 @@ class _RegisterPromotionDetailScreenState
   }
 }
 
-class _GetSelectCategory extends StatefulWidget {
-  const _GetSelectCategory();
+class _GetSelectCategoryContainer extends StatefulWidget {
+  const _GetSelectCategoryContainer();
 
   @override
-  State<_GetSelectCategory> createState() => _GetSelectCategoryState();
+  State<_GetSelectCategoryContainer> createState() =>
+      _GetSelectCategoryContainerState();
 }
 
-class _GetSelectCategoryState extends State<_GetSelectCategory> {
+class _GetSelectCategoryContainerState
+    extends State<_GetSelectCategoryContainer> {
   var categories = [
     'فروش آپارتمان',
     'فروش خانه و ویلا',
@@ -162,12 +163,8 @@ class _GetSelectCategoryState extends State<_GetSelectCategory> {
                         border: InputBorder.none,
                         fillColor: AppColors.grey300,
                         filled: true,
-                        labelText: 'خیابان صیاد شیرازی',
-                        labelStyle: appTheme()
-                            .textTheme
-                            .titleMedium!
-                            .apply(color: AppColors.grey400),
-                        floatingLabelStyle: appTheme()
+                        hintText: 'خیابان صیاد شیرازی',
+                        hintStyle: appTheme()
                             .textTheme
                             .titleMedium!
                             .apply(color: AppColors.grey400),
@@ -184,14 +181,14 @@ class _GetSelectCategoryState extends State<_GetSelectCategory> {
   }
 }
 
-class _GetPropertyCategory extends StatefulWidget {
-  const _GetPropertyCategory();
+class _GetPropertyContainer extends StatefulWidget {
+  const _GetPropertyContainer();
 
   @override
-  State<_GetPropertyCategory> createState() => _GetPropertyCategoryState();
+  State<_GetPropertyContainer> createState() => _GetPropertyContainerState();
 }
 
-class _GetPropertyCategoryState extends State<_GetPropertyCategory> {
+class _GetPropertyContainerState extends State<_GetPropertyContainer> {
   var numbers = [
     '۱',
     '۲',
@@ -259,12 +256,8 @@ class _GetPropertyCategoryState extends State<_GetPropertyCategory> {
                         border: InputBorder.none,
                         fillColor: AppColors.grey300,
                         filled: true,
-                        labelText: 'متراژ',
-                        labelStyle: appTheme()
-                            .textTheme
-                            .titleMedium!
-                            .apply(color: AppColors.grey400),
-                        floatingLabelStyle: appTheme()
+                        hintText: 'متراژ',
+                        hintStyle: appTheme()
                             .textTheme
                             .titleMedium!
                             .apply(color: AppColors.grey400),
@@ -434,8 +427,8 @@ class _GetPropertyCategoryState extends State<_GetPropertyCategory> {
   }
 }
 
-class _GetFacilityCategory extends StatelessWidget {
-  const _GetFacilityCategory();
+class _GetFacilityContainer extends StatelessWidget {
+  const _GetFacilityContainer();
 
   @override
   Widget build(BuildContext context) {
@@ -535,7 +528,7 @@ class _GetFacilityCategory extends StatelessWidget {
           const SizedBox(
             height: 27,
           ),
-          next2Button()
+          next2Button(context)
         ],
       ),
     );

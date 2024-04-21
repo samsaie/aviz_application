@@ -78,28 +78,7 @@ class AddAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: GestureDetector(
-        onTap: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) => const DashboardScreen(),
-            ),
-          );
-        },
-        child: const Icon(CupertinoIcons.clear),
-      ),
-      actions: [
-        IconButton(
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => const DashboardScreen(),
-              ),
-            );
-          },
-          icon: const Icon(CupertinoIcons.right_chevron),
-        ),
-      ],
+      titleSpacing: 0,
       title: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -109,6 +88,19 @@ class AddAppBar extends StatelessWidget {
                   appTheme().textTheme.titleLarge!.apply(color: AppColors.red))
         ],
       ),
+      automaticallyImplyLeading: false,
+      actions: [
+        GestureDetector(
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => const DashboardScreen(),
+              ),
+            );
+          },
+          child: const Icon(CupertinoIcons.clear),
+        ),
+      ],
       centerTitle: true,
       backgroundColor: Colors.transparent,
     );

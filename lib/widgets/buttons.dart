@@ -1,3 +1,5 @@
+import 'package:aviz_application/features/add_promotion/view/register_promotion_location.dart';
+
 import '../../Constants/theme.dart';
 
 import '../features/dashboard_screen.dart';
@@ -95,13 +97,19 @@ Widget nextButton(BuildContext context) {
   );
 }
 
-Widget next2Button() {
+Widget next2Button(context) {
   return SizedBox(
     height: 50,
     width: double.infinity,
     child: ElevatedButton(
       style: appTheme().elevatedButtonTheme.style,
-      onPressed: () {},
+      onPressed: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => const RegisterPromotionLocationScreen(),
+          ),
+        );
+      },
       child: Text(
         'بعدی',
         style: appTheme().textTheme.titleMedium!.apply(color: Colors.white),

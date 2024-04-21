@@ -46,12 +46,8 @@ class LoginScreen extends StatelessWidget {
                     border: InputBorder.none,
                     fillColor: AppColors.grey300,
                     filled: true,
-                    labelText: 'شماره موبایل',
-                    labelStyle: appTheme()
-                        .textTheme
-                        .titleMedium!
-                        .apply(color: AppColors.grey400),
-                    floatingLabelStyle: appTheme()
+                    hintText: 'شماره موبایل',
+                    hintStyle: appTheme()
                         .textTheme
                         .titleMedium!
                         .apply(color: AppColors.grey400),
