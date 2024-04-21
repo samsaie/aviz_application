@@ -56,7 +56,7 @@ class ProfileScreen extends StatelessWidget {
                             'assets/images/Vector.png',
                             scale: 4,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 20,
                           ),
                           Column(
@@ -118,7 +118,7 @@ class ProfileScreen extends StatelessWidget {
                               ),
                             ],
                           ),
-                          Spacer(),
+                          const Spacer(),
                           Column(
                             children: [
                               const SizedBox(height: 16),

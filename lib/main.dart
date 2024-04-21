@@ -1,7 +1,7 @@
-import 'package:aviz_application/Constants/theme.dart';
 import 'package:flutter/material.dart';
 import 'DI/di.dart';
 import 'features/welcome_screen.dart';
+import '../../Constants/theme.dart';
 
 void main() async {
   await getInInit();
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: appTheme(),
-      home: Directionality(
+      home: const Directionality(
         textDirection: TextDirection.rtl,
         child: Scaffold(
           body: WelcomeScreen(),

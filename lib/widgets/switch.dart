@@ -14,7 +14,7 @@ class _SwitchExampleState extends State<SwitchIcon> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 20,
       child: FittedBox(
         fit: BoxFit.contain,

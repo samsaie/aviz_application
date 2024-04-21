@@ -75,7 +75,7 @@ class RecentPromotionCard extends StatelessWidget {
                         textAlign: TextAlign.right,
                         style: appTheme().textTheme.bodySmall),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,

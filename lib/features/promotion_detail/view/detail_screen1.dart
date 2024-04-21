@@ -30,7 +30,7 @@ class _DetailScreenState extends State<DetailScreen> {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         appBar: AppBar(
-          title: DetailAppBar(),
+          title: const DetailAppBar(),
         ),
         body: DefaultTabController(
           length: 4,
@@ -581,41 +581,41 @@ class FacilityTab extends StatelessWidget {
                   borderRadius: BorderRadius.circular(6),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.symmetric(
+                  padding: const EdgeInsets.symmetric(
                     horizontal: 20,
                   ),
                   child: Column(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Row(
                         children: [
                           Text('سند', style: appTheme().textTheme.bodyMedium),
-                          Spacer(),
+                          const Spacer(),
                           Text('تک برگ',
                               style: appTheme().textTheme.bodyMedium),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
-                      Divider(
+                      const Divider(
                         color: Color.fromARGB(255, 235, 239, 244),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Row(
                         children: [
                           Text('جهت ساختمان',
                               style: appTheme().textTheme.bodyMedium),
-                          Spacer(),
+                          const Spacer(),
                           Text('شمالی', style: appTheme().textTheme.bodyMedium),
-                          Divider(),
+                          const Divider(),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                     ],
@@ -699,7 +699,7 @@ class ExplainTab extends StatelessWidget {
                 'ویلا ۵۰۰ متری در خیابان صیاد شیرازی ویو عالی وسط جنگل قیمت فوق العاده  گذاشتم فروش فوری  خریدار باشی تخفیف پای معامله میدم.',
                 style: appTheme().textTheme.bodyMedium,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 32,
               ),
               callButtons()

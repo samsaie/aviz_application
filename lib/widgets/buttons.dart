@@ -74,7 +74,7 @@ Widget nextButton(BuildContext context) {
       onPressed: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => ConfirmScreen(isLogin: true),
+            builder: (context) => const ConfirmScreen(isLogin: true),
           ),
         );
       },
@@ -110,9 +110,9 @@ Widget next2Button() {
   );
 }
 
-class confirmButton extends StatelessWidget {
+class ConfirmButton extends StatelessWidget {
   final bool isLogin;
-  const confirmButton(this.isLogin, {super.key});
+  const ConfirmButton(this.isLogin, {super.key});
 
   @override
   Widget build(BuildContext context) {

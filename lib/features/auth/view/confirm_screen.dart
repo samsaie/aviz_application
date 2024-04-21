@@ -106,7 +106,8 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
                 ),
                 onPressed: () {
                   Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => DashboardScreen()),
+                    MaterialPageRoute(
+                        builder: (context) => const DashboardScreen()),
                   );
                 },
                 child: Text(

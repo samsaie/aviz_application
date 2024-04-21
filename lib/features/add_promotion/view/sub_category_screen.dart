@@ -1,8 +1,8 @@
-import 'package:aviz_application/features/add_promotion/view/register_promotion_detail_screen.dart.dart';
 import 'package:flutter/material.dart';
 import '../../../Constants/color.dart';
 import '../../../Constants/theme.dart';
 import '../../../widgets/appBars.dart';
+import '../../add_promotion/view/register_promotion_detail_screen.dart.dart';
 
 class SubCategoryScreen extends StatefulWidget {
   const SubCategoryScreen({
@@ -24,7 +24,7 @@ class _SubCategoryScreenState extends State<SubCategoryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const categoryAppBar(),
+        title: const CategoryAppBar(),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),

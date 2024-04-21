@@ -1,8 +1,8 @@
-import 'package:aviz_application/features/add_promotion/view/sub_category_screen.dart';
 import 'package:flutter/material.dart';
 import '../../../Constants/color.dart';
 import '../../../Constants/theme.dart';
 import '../../../widgets/appBars.dart';
+import '../../add_promotion/view/sub_category_screen.dart';
 
 class CategoryScreen extends StatefulWidget {
   const CategoryScreen({
@@ -29,7 +29,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
       textDirection: TextDirection.ltr,
       child: Scaffold(
         appBar: AppBar(
-          title: const categoryAppBar(),
+          title: const CategoryAppBar(),
         ),
         body: Padding(
           padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),

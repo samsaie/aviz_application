@@ -1,9 +1,9 @@
-import 'package:aviz_application/widgets/switch.dart';
 import 'package:flutter/material.dart';
 import '../../../widgets/buttons.dart';
 import '../../../Constants/color.dart';
 import '../../../widgets/appBars.dart';
 import '../../../Constants/theme.dart';
+import '../../../widgets/switch.dart';
 
 class RegisterPromotionDetailScreen extends StatefulWidget {
   const RegisterPromotionDetailScreen({super.key});
@@ -22,24 +22,24 @@ class _RegisterPromotionDetailScreenState
         automaticallyImplyLeading: false,
         title: const AddAppBar(),
       ),
-      body: Directionality(
+      body: const Directionality(
         textDirection: TextDirection.rtl,
         child: SingleChildScrollView(
           child: Column(
             children: [
               _GetSelectCategory(),
-              const Divider(
+              Divider(
                 endIndent: 20,
                 indent: 20,
                 color: AppColors.grey200,
               ),
               _GetPropertyCategory(),
-              const Divider(
+              Divider(
                 endIndent: 20,
                 indent: 20,
                 color: AppColors.grey200,
               ),
-              const _GetFacilityCategory()
+              _GetFacilityCategory()
             ],
           ),
         ),
@@ -49,7 +49,7 @@ class _RegisterPromotionDetailScreenState
 }
 
 class _GetSelectCategory extends StatefulWidget {
-  _GetSelectCategory();
+  const _GetSelectCategory();
 
   @override
   State<_GetSelectCategory> createState() => _GetSelectCategoryState();
@@ -185,7 +185,7 @@ class _GetSelectCategoryState extends State<_GetSelectCategory> {
 }
 
 class _GetPropertyCategory extends StatefulWidget {
-  _GetPropertyCategory();
+  const _GetPropertyCategory();
 
   @override
   State<_GetPropertyCategory> createState() => _GetPropertyCategoryState();

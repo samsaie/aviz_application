@@ -1,13 +1,9 @@
-import 'package:aviz_application/features/add_promotion/view/sub_category_screen.dart';
-
+import 'package:flutter/material.dart';
 import '../Constants/color.dart';
 import 'add_promotion/view/category_screen.dart';
-
 import 'home/view/home_screen.dart';
 import 'profile/view/profile_screen.dart';
 import 'search/view/search_screen.dart';
-
-import 'package:flutter/material.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});

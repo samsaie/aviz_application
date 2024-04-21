@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import '../Constants/theme.dart';
 import 'cached_network_image.dart';
 import '../Util/number_extension.dart';
@@ -17,7 +16,7 @@ class HotPromotionCard extends StatelessWidget {
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => DetailScreenn(promotion: promotion),
+            builder: (context) => DetailScreen2(promotion: promotion),
           ),
         );
       },

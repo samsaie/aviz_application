@@ -33,8 +33,8 @@ Widget profileAppBar() {
   );
 }
 
-class categoryAppBar extends StatelessWidget {
-  const categoryAppBar({
+class CategoryAppBar extends StatelessWidget {
+  const CategoryAppBar({
     super.key,
   });
 
@@ -64,19 +64,6 @@ class categoryAppBar extends StatelessWidget {
           child: const Icon(CupertinoIcons.clear),
         ),
       ],
-      // actions: [
-      //   IconButton(
-      //     onPressed: () {
-      //       Navigator.of(context).push(
-      //         MaterialPageRoute(
-      //           builder: (context) => const DashboardScreen(),
-      //         ),
-      //       );
-      //     },
-      //     icon: const Icon(CupertinoIcons.right_chevron),
-      //   ),
-      // ],
-
       centerTitle: true,
       backgroundColor: Colors.transparent,
     );
@@ -144,7 +131,7 @@ class HomeAppBar extends StatelessWidget {
 }
 
 class DetailAppBar extends StatefulWidget {
-  DetailAppBar({super.key});
+  const DetailAppBar({super.key});
 
   @override
   State<DetailAppBar> createState() => _DetailAppBarState();

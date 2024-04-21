@@ -8,16 +8,16 @@ import '../../../widgets/alert_dialogs.dart';
 import '../../../widgets/cached_network_image.dart';
 import '../../home/data/model/promotion.dart';
 
-class DetailScreenn extends StatefulWidget {
+class DetailScreen2 extends StatefulWidget {
   final Promotion promotion;
 
-  DetailScreenn({super.key, required this.promotion});
+  const DetailScreen2({super.key, required this.promotion});
 
   @override
-  State<DetailScreenn> createState() => _DetailScreennState();
+  State<DetailScreen2> createState() => _DetailScreen2State();
 }
 
-class _DetailScreennState extends State<DetailScreenn> {
+class _DetailScreen2State extends State<DetailScreen2> {
   late final Promotion promotion;
   bool clicked = false;
   var sectionsList = [
@@ -42,7 +42,7 @@ class _DetailScreennState extends State<DetailScreenn> {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         appBar: AppBar(
-          title: DetailAppBar(),
+          title: const DetailAppBar(),
         ),
         body: CustomScrollView(
           slivers: [

@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-
 import '../../../../networkUtil/api_exception.dart';
 import '../model/promotion.dart';
 

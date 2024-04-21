@@ -6,7 +6,7 @@ import '../widgets/buttons.dart';
 import '../Constants/theme.dart';
 
 class WelcomeScreen extends StatefulWidget {
-  WelcomeScreen({super.key});
+  const WelcomeScreen({super.key});
 
   @override
   State<WelcomeScreen> createState() => _WelcomeScreenState();
@@ -116,7 +116,7 @@ Widget _getContainerBox() {
         height: 16,
       ),
       Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Text(
           'در آویز ملک خود را برای فروش،اجاره و رهن آگهی کنید و یا اگر دنبال ملک با مشخصات دلخواه خود هستید آویز ها را ببینید',
           style: appTheme().textTheme.bodyMedium,
