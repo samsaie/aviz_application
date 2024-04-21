@@ -41,9 +41,7 @@ class _RegisterPromotionPhotoScreenState
 }
 
 class _GetCallSwitches extends StatelessWidget {
-  const _GetCallSwitches({
-    super.key,
-  });
+  const _GetCallSwitches();
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +72,7 @@ class _GetCallSwitches extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
           Container(
