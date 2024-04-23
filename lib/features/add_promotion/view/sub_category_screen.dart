@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:percent_indicator/linear_percent_indicator.dart';
 import '../../../Constants/color.dart';
 import '../../../Constants/theme.dart';
 import '../../../widgets/appBars.dart';
@@ -25,6 +26,15 @@ class _SubCategoryScreenState extends State<SubCategoryScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const CategoryAppBar(),
+        bottom: PreferredSize(
+          preferredSize: const Size(0, 0),
+          child: LinearPercentIndicator(
+            lineHeight: 10.0,
+            percent: 0.7,
+            progressColor: Colors.white,
+            backgroundColor: Colors.red,
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),

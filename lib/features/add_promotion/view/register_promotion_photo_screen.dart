@@ -1,5 +1,6 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
+import 'package:percent_indicator/linear_percent_indicator.dart';
 import '../../../Constants/color.dart';
 import '../../../Constants/theme.dart';
 import '../../../widgets/appBars.dart';
@@ -21,6 +22,15 @@ class _RegisterPromotionPhotoScreenState
     return Scaffold(
       appBar: AppBar(
         title: const AddAppBar(),
+        bottom: PreferredSize(
+          preferredSize: const Size(0, 0),
+          child: LinearPercentIndicator(
+            lineHeight: 10.0,
+            percent: 0.01,
+            progressColor: Colors.white,
+            backgroundColor: Colors.red,
+          ),
+        ),
       ),
       body: const Directionality(
         textDirection: TextDirection.rtl,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:percent_indicator/linear_percent_indicator.dart';
 import '../../../Constants/color.dart';
 import '../../../Constants/theme.dart';
 import '../../../widgets/appBars.dart';
@@ -20,6 +21,15 @@ class _RegisterPromotionLocationScreenState
     return Scaffold(
       appBar: AppBar(
         title: const AddAppBar(),
+        bottom: PreferredSize(
+          preferredSize: const Size(0, 0),
+          child: LinearPercentIndicator(
+            lineHeight: 10.0,
+            percent: 0.3,
+            progressColor: Colors.white,
+            backgroundColor: Colors.red,
+          ),
+        ),
       ),
       body: Directionality(
         textDirection: TextDirection.rtl,
