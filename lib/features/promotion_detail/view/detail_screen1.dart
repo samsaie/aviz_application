@@ -1,3 +1,4 @@
+import 'package:aviz_application/Util/number_extension.dart';
 import 'package:aviz_application/widgets/appBars.dart';
 import 'package:flutter/material.dart';
 import '../../../widgets/alert_dialogs.dart';
@@ -16,14 +17,6 @@ class DetailScreen extends StatefulWidget {
 }
 
 class _DetailScreenState extends State<DetailScreen> {
-  late final Promotion promotion;
-
-  @override
-  void setState(VoidCallback fn) {
-    super.setState(fn);
-    widget.promotion;
-  }
-
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -50,8 +43,13 @@ class _DetailScreenState extends State<DetailScreen> {
                 ),
               ];
             },
-            body: const TabBarView(
-              children: [InfoTab(), PriceTab(), FacilityTab(), ExplainTab()],
+            body: TabBarView(
+              children: [
+                InfoTab(widget.promotion),
+                PriceTab(widget.promotion),
+                FacilityTab(widget.promotion),
+                ExplainTab(widget.promotion)
+              ],
             ),
           ),
         ),
@@ -79,11 +77,12 @@ class HeaderContent extends StatelessWidget {
             height: 220.0,
             child: Center(
               child: SizedBox(
-                  width: double.maxFinite,
-                  child: CachedImage(
-                    imageUrl: parentWidget.promotion.thumbnailUrl,
-                    fit: BoxFit.cover,
-                  )),
+                width: double.maxFinite,
+                child: CachedImage(
+                  imageUrl: parentWidget.promotion.thumbnailUrl,
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
           ),
           Row(
@@ -134,8 +133,9 @@ class HeaderContent extends StatelessWidget {
                   showDialog(
                     context: context,
                     builder: (context) => Directionality(
-                        textDirection: TextDirection.rtl,
-                        child: alertDialog(context)),
+                      textDirection: TextDirection.rtl,
+                      child: alertDialog(context),
+                    ),
                   );
                 },
                 child: Row(
@@ -192,7 +192,9 @@ class DetailTabBar extends StatelessWidget {
 }
 
 class InfoTab extends StatelessWidget {
-  const InfoTab({
+  final Promotion promotion;
+  const InfoTab(
+    this.promotion, {
     super.key,
   });
 
@@ -233,7 +235,7 @@ class InfoTab extends StatelessWidget {
                           height: 5,
                         ),
                         Text(
-                          '۵۰۰',
+                          promotion.meterage.toString(),
                           style: appTheme()
                               .textTheme
                               .bodyMedium!
@@ -268,7 +270,7 @@ class InfoTab extends StatelessWidget {
                           height: 5,
                         ),
                         Text(
-                          '۶',
+                          promotion.rooms.toString(),
                           style: appTheme()
                               .textTheme
                               .bodyMedium!
@@ -303,12 +305,12 @@ class InfoTab extends StatelessWidget {
                           height: 5,
                         ),
                         Text(
-                          'دوبلکس',
+                          promotion.floors.toString(),
                           style: appTheme()
                               .textTheme
                               .bodyMedium!
                               .apply(color: AppColors.grey700),
-                        )
+                        ),
                       ],
                     ),
                     const SizedBox(
@@ -338,12 +340,12 @@ class InfoTab extends StatelessWidget {
                           height: 5,
                         ),
                         Text(
-                          '۱۴۰۲',
+                          promotion.buildYear.toString(),
                           style: appTheme()
                               .textTheme
                               .bodyMedium!
                               .apply(color: AppColors.grey700),
-                        )
+                        ),
                       ],
                     ),
                     const SizedBox(
@@ -438,7 +440,9 @@ class InfoTab extends StatelessWidget {
 }
 
 class PriceTab extends StatelessWidget {
-  const PriceTab({
+  final Promotion promotion;
+  const PriceTab(
+    this.promotion, {
     super.key,
   });
 
@@ -479,7 +483,7 @@ class PriceTab extends StatelessWidget {
                           ),
                           const Spacer(),
                           Text(
-                            '۴۶٬۴۶۰٬۰۰۰',
+                            promotion.pricePerMeter.convertToPrice(),
                             style: appTheme()
                                 .textTheme
                                 .titleMedium!
@@ -507,7 +511,7 @@ class PriceTab extends StatelessWidget {
                           ),
                           const Spacer(),
                           Text(
-                            '۲۳٬۲۳۰٬۰۰۰٬۰۰۰',
+                            promotion.price.convertToPrice(),
                             style: appTheme()
                                 .textTheme
                                 .titleMedium!
@@ -536,7 +540,9 @@ class PriceTab extends StatelessWidget {
 }
 
 class FacilityTab extends StatelessWidget {
-  const FacilityTab({
+  final Promotion promotion;
+  const FacilityTab(
+    this.promotion, {
     super.key,
   });
 
@@ -593,7 +599,7 @@ class FacilityTab extends StatelessWidget {
                         children: [
                           Text('سند', style: appTheme().textTheme.bodyMedium),
                           const Spacer(),
-                          Text('تک برگ',
+                          Text(promotion.sanad,
                               style: appTheme().textTheme.bodyMedium),
                         ],
                       ),
@@ -611,7 +617,8 @@ class FacilityTab extends StatelessWidget {
                           Text('جهت ساختمان',
                               style: appTheme().textTheme.bodyMedium),
                           const Spacer(),
-                          Text('شمالی', style: appTheme().textTheme.bodyMedium),
+                          Text(promotion.direction,
+                              style: appTheme().textTheme.bodyMedium),
                           const Divider(),
                         ],
                       ),
@@ -684,7 +691,8 @@ class FacilityTab extends StatelessWidget {
 }
 
 class ExplainTab extends StatelessWidget {
-  const ExplainTab({super.key});
+  final Promotion promotion;
+  const ExplainTab(this.promotion, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -696,7 +704,7 @@ class ExplainTab extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                'ویلا ۵۰۰ متری در خیابان صیاد شیرازی ویو عالی وسط جنگل قیمت فوق العاده  گذاشتم فروش فوری  خریدار باشی تخفیف پای معامله میدم.',
+                promotion.moreInfo,
                 style: appTheme().textTheme.bodyMedium,
               ),
               const SizedBox(
