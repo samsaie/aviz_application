@@ -27,7 +27,7 @@ Widget getButtons(BuildContext context) {
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (context) => const SignScreen(),
+                builder: (context) => LoginScreen(),
               ),
             );
           },
@@ -54,7 +54,7 @@ Widget getButtons(BuildContext context) {
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (context) => const LoginScreen(),
+                builder: (context) => LoginScreen(),
               ),
             );
           },

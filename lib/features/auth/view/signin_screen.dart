@@ -1,14 +1,12 @@
-import 'package:aviz_application/widgets/buttons.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
 import '../../../Constants/color.dart';
-
+import '../../../widgets/buttons.dart';
 import '../../../Constants/theme.dart';
 import 'login_screen.dart';
 
-class SignScreen extends StatelessWidget {
-  const SignScreen({super.key});
+class SignInScreen extends StatelessWidget {
+  const SignInScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -91,7 +89,7 @@ class SignScreen extends StatelessWidget {
                             ..onTap = () {
                               Navigator.of(context).push(
                                 MaterialPageRoute(
-                                  builder: (context) => const LoginScreen(),
+                                  builder: (context) => LoginScreen(),
                                 ),
                               );
                             },

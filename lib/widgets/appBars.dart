@@ -193,7 +193,7 @@ class _DetailAppBarState extends State<DetailAppBar> {
               : Image.asset('assets/images/save_icon.png'),
           onPressed: () {
             setState(() {
-              clicked = clicked;
+              clicked = !clicked;
             });
           },
         ),
